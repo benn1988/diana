@@ -5,35 +5,35 @@
     <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-md-8">
-            <h1 class="my-4">Welcome to my blog</h1>
-            {% for post in posts %}
             <!-- Blog Post -->
-            <div class="card mb-4">
+            <div class="card my-4">
                 <div class="row">
-                    <img class="rounded-circle col-4" src="{{ post.author.profile.image.url }}">
+                    <img class="rounded-circle col-4" src="{{ object.author.profile.image.url }}">
                     <img class="card-img-top col-8" src="http://placehold.it/750x300" alt="Card image cap">
                 </div>
                 <div class="card-body">
-                    <h2 class="card-title"><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-                    <p class="card-text">{{ post.content | slice:":400" }}...</p>
-                    <a href="{% url 'post-detail' post.id %}" class="btn btn-primary">Read More &rarr;</a>
+                    <h2 class="card-title">{{ object.title }}</h2>
+                    <p class="card-text">{{ object.content }}</p>
                 </div>
                 <div class="card-footer text-muted">
-                    Posted on {{ post.date_posted|date:'F d, Y' }} by
-                    <a href="{% url 'profile-detail' post.author %}">{{ post.author }}</a>
+                    <div class="row">
+                        <span class="col-6">
+                            Posted on {{ object.date_posted|date:'F d, Y' }} by
+                            <a href="{% url 'profile-detail' object.author %}">{{ object.author }}</a>
+                        </span>
+                        <span class="col-6 text-right">
+                            <a class="btn btn-secondary btn-small ml-5 mr-3" href="{% url 'post-update' object.id %}">Edit</a>
+                            <a class="btn btn-danger btn-small" href="{% url 'post-delete' object.id %}">Delete</a>
+                        </span>
+                    </div>
                 </div>
             </div>
-            {% endfor %}
 
             <!-- Pagination -->
-            <ul class="pagination justify-content-center mb-4">
-                <li class="page-item">
-                    <a class="page-link" href="#">&larr; Older</a>
-                </li>
-                <li class="page-item disabled">
-                    <a class="page-link" href="#">Newer &rarr;</a>
-                </li>
-            </ul>
+            <div class="justify-content-center">
+                <a class="text-secondary" href="{% url 'blog' %}"><h4>Back to main page...</h4></a>
+            </div>
+            
 
         </div>
 

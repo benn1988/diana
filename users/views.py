@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from .models import Profile
 
 def register(request):
     if request.method == "POST":
@@ -36,3 +37,12 @@ def profile(request):
     }
 
     return render(request, 'users/profile.html', context)
+
+def profile_detail(request, username):
+    """
+    Get the username passed to the view by the url
+    and try to match it to a user profile.
+    If no profile with such username found then raise an exception
+    """
+    details = get_object_or_404(Profile, user__username=username)
+    return render(request, 'users/profile_detail.html', {'details': details})
