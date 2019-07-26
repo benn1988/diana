@@ -1,9 +1,15 @@
+"""
+Model for the users app
+"""
+
 from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
 
 class Profile(models.Model):
-    '''create the profile model'''
+    '''
+    Profile model. Inherits the Django built in User model
+    '''
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
 
@@ -11,7 +17,10 @@ class Profile(models.Model):
         return f'{self.user.username}'
 
     def save(self, *args, **kwargs):
-        '''updating the save method to be able to save the picture to the profile'''
+        '''
+        Override for the save method to be able to save the picture to the profile.
+        Also it uses the PIL library to resize photos uploaded by the user
+        '''
         super().save(*args, **kwargs)
 
         img = Image.open(self.image.path)

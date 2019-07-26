@@ -1,3 +1,7 @@
+"""
+View module for the users app
+"""
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -5,11 +9,16 @@ from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from .models import Profile
 
 def register(request):
+    """
+    Register new user view. The view is displaying a blank form for a GET request.
+    If request  method is POST, the form gets checked. If it is valid it gets saved,
+    otherwise it is sent back to the user
+    """
     if request.method == "POST":
         form = UserRegisterForm(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data.get('username')
+            # username = form.cleaned_data.get('username')
             messages.success(request, f'Your account has been created! You can now log in')
             return redirect('login')
     else:
@@ -19,6 +28,11 @@ def register(request):
 
 @login_required
 def profile(request):
+    """
+    Profile view. The view is displaying current profile for a GET request.
+    If request  method is POST, the forms gets checked. If they are valid,
+    they get saved, and the user gets redirected back to his profile
+    """
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)

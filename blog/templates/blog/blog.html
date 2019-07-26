@@ -1,11 +1,11 @@
 {% extends 'site_content/base.html' %}
-<!-- {% block title %}Diana`s Blog{% endblock title %} -->
+{% block title %}Diana`s Blog{% endblock title %}
 {% block content %}
-<div class="container">
+<div class="main-blog">
+    <h1 class="my-4">Welcome to my blog</h1>
     <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-md-8">
-            <h1 class="my-4">Welcome to my blog</h1>
             {% for post in posts %}
             <!-- Blog Post -->
             <div class="card mb-4">
@@ -38,7 +38,7 @@
         </div>
 
         <!-- Sidebar Widgets Column -->
-        <div class="col-md-4">
+        <div class="col-md-4 pt-0">
 
             <!-- Search Widget -->
             <div class="card my-4">

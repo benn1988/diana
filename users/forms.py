@@ -5,6 +5,9 @@ from .models import Profile
 
 
 class UserRegisterForm(UserCreationForm):
+    """
+    Class that inherits from UserCreationForm, with the added email field
+    """
     email = forms.EmailField()
 
     class Meta:
@@ -21,6 +24,9 @@ class UserUpdateForm(forms.ModelForm):
 
 
 class ProfileUpdateForm(forms.ModelForm):
+    """
+    Update Meta to allow the new image to be saved
+    """
     class Meta:
         model = Profile
         fields = ['image']

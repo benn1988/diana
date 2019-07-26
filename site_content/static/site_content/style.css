@@ -1,83 +1,87 @@
+body, html, main {
+  font-family: "Raleway", sans-serif;
+  background-color: #1a1a1a;
+  color: white;
+}
+
 .container {
   max-width: 960px;
 }
 
 .form-signin {
-  max-width: 330px;
+  max-width: 530px;
   padding: 15px;
   margin: auto;
 }
-
-
-/* .main-container {
-  min-height: 100vh; */
-  /* will cover the 100% of viewport */
-  /* overflow: hidden;
-  position: relative;
-  padding-bottom: 70px;
-  height of your footer 
-}*/
-
-/* footer {
+/* header {
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 70px;
-  background-color: black!important;
+  left: 0;
+  right: 0;
 } */
 
-  /*
-   * Dummy devices (replace them with your own or something else entirely!)
-   */
-
-/* .product-device {
-  position: absolute;
-  right: 10%;
-  bottom: -30%;
-  width: 300px;
-  height: 540px;
-  background-color: #333;
-  border-radius: 21px;
-  -webkit-transform: rotate(30deg);
-  transform: rotate(30deg);
+header nav.navbar {
+  margin-top: 70px;
 }
 
-.product-device::before {
+li.nav-item a.nav-link {
+  font: bold 1.1rem 'Montserrat', sans-serif;
+  /* margin: 0 40px !important; */
+  padding: 10px 25px !important;
+  color: white !important;
+  border: 1px solid rgba(0, 0, 0 ,0);
+}
+
+li.nav-item a.nav-link.active, li.nav-item a.nav-link:hover {
+  border: 1px solid white;
+  transition: all .4s ease;
+}
+
+li.nav-item a.nav-link::after {
   position: absolute;
-  top: 10%;
-  right: 10px;
-  bottom: 10%;
-  left: 10px;
   content: "";
-  background-color: rgba(255, 255, 255, .1);
-  border-radius: 5px;
+  width: 5px;
+  height: 16px;
 }
 
-.product-device-2 {
-  top: -25%;
-  right: auto;
-  bottom: 0;
-  left: 5%;
-  background-color: #e5e5e5;
-} */
-
-
-/*
-   * Extra utilities
-   */
-
-.flex-equal>* {
-  -ms-flex: 1;
-  flex: 1;
+body {
+  background-image: url("images/blackgirl2.jpg");
+  /* background-origin: border-box; */
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50vh;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
 }
 
-@media (min-width: 768px) {
-  .flex-md-equal>* {
-    -ms-flex: 1;
-    flex: 1;
+#telephone {
+  position: absolute;
+  margin-top: -300px;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 1199px) {
+  li.nav-item a.nav-link {
+    font-size: 1rem;
+  }
+  header nav.navbar {
+    right: 0;
+  }
+  li.nav-item a.nav-link {
+    margin: 0 33px !important;
   }
 }
 
-.overflow-hidden {
-  overflow: hidden;
+@media only screen and (max-width: 960px) {
+  li.nav-item a.nav-link {
+    font-size: 0.8rem;
+  }
+  header nav.navbar {
+    right: 0;
+  }
+  li.nav-item a.nav-link {
+    margin: 0 20px !important;
+  }
 }
