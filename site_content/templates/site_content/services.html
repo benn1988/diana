@@ -1,5 +1,138 @@
 {% extends 'site_content/base.html' %}
-{% load static %}
+{% block title %}Available services{% endblock title %}
 {% block content %}
-<p>Services webpage</p>
+<div class="container">
+    <h1 class="row justify-content-center py-2 font-weight-bold">Services</h1>
+
+    <!-- BEGGINING OF THE CARD DECK -->
+    <div class="card-deck services pt-3">
+
+        <!-- FIRST CARD -->
+        <div class="card bg-transparent border-0">
+
+            <!-- First section of the 1st card -->
+            <h2 class="card-title">HAIRCUTS</h2>
+            <div class="card-body p-0">
+                <h4 class="border-bottom">Women`s</h4>
+                <div class="row m-0 justify-content-between">
+                    <p class="pl-4">Short lenght</p>
+                    <p>$40</p>
+                </div>
+                <div class="row m-0 justify-content-between">
+                    <p class="pl-4">Medium lenght</p>
+                    <p>$55+</p>
+                </div>
+                <div class="row m-0 justify-content-between">
+                    <p class="pl-4">Long hair</p>
+                    <p>$70+</p>
+                </div>
+                <div class="row m-0 justify-content-between">
+                    <p class="pl-4">Bang trim</p>
+                    <p>$10</p>
+                </div>
+                <h4>Men`s</h4>
+                <div class="row m-0 justify-content-between">
+                    <p class="pl-4">Short lenght</p>
+                    <p>$20+</p>
+                </div>
+                <div class="row m-0 justify-content-between">
+                    <p class="pl-4">Long lenght</p>
+                    <p>$40+</p>
+                </div>
+                <h4>Children`s &nbsp;<span class="font-italic"><small>(under 12)</small></span></h4>
+                <div class="row m-0 justify-content-between">
+                    <p class="pl-4">Boy`s</p>
+                    <p>$20+</p>
+                </div>
+                <div class="row m-0 justify-content-between">
+                    <p class="pl-4">Girl`s</p>
+                    <p>$30+</p>
+                </div>
+                <h4>Shampoo &nbsp;<span class="font-italic"><small>(without drying)</small></span></h4>
+                <div class="row m-0 justify-content-between">
+                    <p class="pl-4">In case it`s needed &#10033;</p>
+                    <p>$10+</p>
+                </div> <!-- End last row -->
+            </div> <!-- End card body 1st section of 1st card -->
+
+            <!-- 2nd section of 1st card -->
+            <h2 class="card-title">STYLING</h2>
+            <div class="card-body p-0">
+                <div class="row m-0 justify-content-between">
+                    <h4>Blowout</h4>
+                    <p>$40+</p>
+                </div>
+                <h4 class="row m-0 test justify-content-between">
+                    <span>Formal styling</span>
+                    <span><small>$70+</small></span>
+                </h4> <!-- End last row div -->
+            </div> <!-- End 2nd section of 2nd card body -->
+        </div> <!-- End 1st card -->
+
+        <!-- SECOND CARD -->
+        <div class="card bg-transparent border-0">
+
+            <!-- First section of 2nd card -->
+            <h2 class="card-title">HAIR COLOR</h2>
+            <div class="card-body p-0">
+                <div class="row m-0 justify-content-between">
+                    <h4>Color retouch</h4>
+                    <p>$60+</p>
+                </div>
+                <div class="row m-0 justify-content-between">
+                    <h4>Full color</h4>
+                    <p>$90+</p>
+                </div>
+                <div class="row m-0 justify-content-between">
+                    <h4>Partial hairlight</h4>
+                    <p>$85+</p>
+                </div>
+                <div class="row m-0 justify-content-between">
+                    <h4>Full hairlight</h4>
+                    <p>$120+</p>
+                </div>
+                <div class="row m-0 justify-content-between">
+                    <h4>Balayage</h4>
+                    <p>$140+</p>
+                </div>
+                <div class="row m-0 justify-content-between">
+                    <h4>Color correction</h4>
+                    <p>By Consultation</p>
+                </div> <!-- End last row -->
+            </div> <!-- End 1st section 2nd card body div -->
+
+            <!-- 2nd section of 2nd card -->
+            <h2 class="card-title">WEDDING</h2>
+            <div class="card-body p-0">
+                <div class="row m-0 justify-content-between">
+                    <h4>Wedding packages</h4>
+                    <p>By Consultation</p>
+                </div> <!-- End last row div -->
+            </div> <!-- End 2nd section 2nd card body div -->
+
+            <!-- 3rd section of 2nd card -->
+            <h2 class="card-title">MAKEUP</h2>
+            <div class="card-body p-0">
+                <div class="row m-0 justify-content-between">
+                    <h4>Day makeup</h4>
+                    <p>$60</p>
+                </div>
+                <div class="row m-0 justify-content-between">
+                    <h4>Special ocassion</h4>
+                    <p>$75</p>
+                </div> <!-- End last row div -->
+            </div> <!-- End 3rd section 2nd card body div -->
+        </div> <!-- End  2nd card div -->
+    </div> <!-- End card-deck div -->
+
+    <!-- NOTES CARD -->
+    <div class="card bg-transparent border-0">
+        <div class="card-body">
+            <p>NOTES</p>
+            <p>&#10033; Achieving the best results is only possible when I work with a fresh washed hair, preferably the same day. If the hair needs to be washed, an adittional charge will incur. It is highly advised you to wash your hair home before your visit, as this will reduce the time at the salon, and will save you money as well</p>
+        </div>
+        
+    </div>
+
+</div> <!-- End container div -->
 {% endblock content %}

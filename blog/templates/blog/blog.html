@@ -1,8 +1,9 @@
 {% extends 'site_content/base.html' %}
 {% block title %}Diana`s Blog{% endblock title %}
 {% block content %}
-<div class="main-blog">
+<div class="main-blog container">
     <h1 class="my-4">Welcome to my blog</h1>
+    <p>Hi there, my name is <abbr tittle="dian">Diana Staver.</abbr> </p>
     <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-md-8">
@@ -24,6 +25,11 @@
                 </div>
             </div>
             {% endfor %}
+
+
+            {% if is_paginated %}
+                
+            {% endif %}
 
             <!-- Pagination -->
             <ul class="pagination justify-content-center mb-4">

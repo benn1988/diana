@@ -1,0 +1,217 @@
+html, body {
+  height: 100%;
+}
+
+/* Cover background image on body element */
+body {
+  font-family: "Raleway", sans-serif;
+  color: #231709;
+  background-image: url("images/background_576.jpg");
+  background-position: center 52.8px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: content;
+  -o-background-size: cover;
+}
+
+/* Background color on main element */
+main {
+  background-color: #f0f0f0;
+}
+
+/* Sign-In page in center and with max width */
+.form-signin {
+  max-width: 50%;
+  padding: 15px;
+  margin: auto;
+}
+
+/* Navigation Menu CSS */
+nav.navbar-default {
+  background-color: #231709 !important;
+}
+
+li.nav-item a.nav-link {
+  font: bold 0.8rem 'Montserrat', sans-serif;
+  margin: 0 0 !important;
+  padding: 10px 25px !important;
+  color: white !important;
+  border: 1px solid rgba(0, 0, 0 ,0);
+  display: inline-block;
+  min-width: 125px;
+}
+
+li.nav-item a.nav-link.active, li.nav-item a.nav-link:hover {
+  border: 1px solid white;
+  transition: all .4s ease;
+}
+
+ul.navbar-nav li.nav-item:nth-child(n+2)::after {
+  display: none;
+  content: "";
+  height: 16px;
+  margin-top: -20px;
+  width: 1px;
+  background-color: white;
+  transform: rotate(25deg) translateY(-50%);
+}
+
+.navbar .navbar-toggler-icon {
+  background-image: url("images/menu.svg");
+}
+
+/* Diana staver logo */
+#logo {
+  background-position: 5% 60%;
+  background-image: url("images/logo320.png");
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+/* Phone number */
+#telephone {
+  position: absolute;
+  text-decoration: none !important;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #231709;
+  text-shadow: 1px 1px 1px white;
+  top: 80%;
+  left: 10%;
+}
+
+/* Card with bio on index page */
+.card.index-bio {
+  display: flex;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  -ms-flexbox-direction: column;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  box-shadow: 5px 5px 20px #231709;
+  background-color: #cacaca;
+}
+
+.card.index-bio p span {
+  display: none;
+}
+
+.card.index-bio a.btn {
+  background-color: #3d2810;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  display: none;
+}
+
+.card.index-bio a.btn:hover {
+  background-color: #231709;
+}
+.card.index-bio img {
+  max-height: 491px;
+  max-width: 334px;
+}
+.container.index-page {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Footer CSS */
+footer {
+  background-color: #231709 !important;
+}
+footer svg {
+  height: 24px;
+  width: 24px;
+}
+
+/* SERVICES */
+
+/*  */
+.card-deck.services h2 {
+  border-bottom: 2px solid #5D5D5D;
+}
+h4.row {
+  border-bottom: 1px solid #5D5D5D;
+  padding-left: 0 !important;
+}
+
+
+/* Mobile first media queries */
+
+@media only screen and (min-width: 576px) {
+  body {
+    background-image: url("images/background_768.jpg");
+  }
+  #logo {
+    background-image: url("images/logo576.png");
+    background-size: 50%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    background-image: url("images/background_992.jpg");
+  }
+  #logo {
+    background-size: 45%;
+  }
+  #telephone {
+    font-size: 2rem;
+    top: 75%;
+    left: 10%;
+  }
+  li.nav-item a.nav-link {
+    margin: 0 10px !important;
+    font-size: 0.9rem;
+  }
+  .card.index-bio {
+    -ms-flexbox-direction: row;
+    -moz-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  }
+  ul.navbar-nav li.nav-item:nth-child(n+2)::after {
+    display: block;
+  }
+
+  .card-deck.services h4 {
+    margin-left: 0.5rem !important;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  body {
+    background-image: url("images/background_1200.jpg");
+  }
+  #logo {
+    background-size: 40%;
+  }
+  li.nav-item a.nav-link {
+    margin: 0 33px !important;
+    font-size: 1rem;
+  }
+  .card.index-bio a.btn {
+    display: inline-block;
+  }
+  .card.index-bio {
+    max-width: 70%;
+  }
+}
+
+@media only screen and (min-width: 1200px) { 
+  /* body {
+    background-image: url("images/background_1920.jpg");
+  } */
+  li.nav-item a.nav-link {
+    margin: 0 40px !important;
+    font-size: 1.1rem;
+  }
+  .card.index-bio p span {
+    display: inline;
+  }
+}

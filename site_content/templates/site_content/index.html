@@ -1,25 +1,26 @@
 {% extends 'site_content/base.html' %}
 {% load static %}
 {% block title %}Diana Staver Hair&Make Up{% endblock title %}
-{% block styles %}
-    <style>
-        #index-photo-header {height: 100vh !important; background-attachment: fixed;}
-        @media only screen and (max-width: 1199px) {
-            #index-photo-header {
-                background-attachment: scroll;
-            }
-        }
-    </style>
-{% endblock styles %}
 {% block content %}
-<div>
-    <a href="tel:+16196487030" id="telephone">619-648-7030</a>
-    <p>Index Page</p>
-    <p>Index Page</p>
-    <p>Index Page</p>
-    <p>Index Page</p>
-    <p>Index Page</p>
-    <p>Index Page</p>
-    <p>Index Page</p>
+<div class="container index-page">
+    <div class="card index-bio mx-auto text-center">
+        <picture class="card-img-top m-md-3 col-md-6 mt-2 mx-auto px-0">
+            <source srcset="{% static 'site_content/images/dianastaver.webp' %}" type="image/webp">
+            <img src="{% static 'site_content/images/dianastaver.jpg' %}" alt="Diana Staver`s personal photo">
+        </picture>
+        <div class="card-body col-md-6">
+            <h3 class="card-title text-center font-weight-bold">About myself</h3>
+            <p class="card-text text-justify">
+                Hi there, my name is Diana Staver.<br>
+                Since the age of 7 I always loved playing with hair. When I was 15 I did the hair for a school presentation
+                 for a couple of girls, long before I had any specialty courses taken. I started an actual career in 2009 after I took a 
+                 hairstylist course, and begun working soon after. Now, years after, I still strive to improve myself, by taking 
+                 various courses related to modern hair cutting, coloring, styling, braiding techniques, as well as makeup.<br>
+                 <span>My goal is to have every single customer leave with a smile on their face, while feeling beautiful both inside and out, 
+                 and I do that by carefully listening to all of the client`s needs and desires.</span>
+            </p>
+            <a href="{% url 'gallery' %}" class="btn">Check my works</a>
+        </div>
+    </div>
 </div>
 {% endblock content %}
