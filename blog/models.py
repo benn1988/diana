@@ -15,8 +15,8 @@ class Post(models.Model):
     date_updated = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    class Meta:
-        ordering = ['-date_posted',]
+    # class Meta:
+    #     ordering = ['-date_posted',]
 
     def __str__(self):
         return self.title

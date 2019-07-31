@@ -20,7 +20,8 @@ class PostListView(ListView):
     model = Post
     template_name = 'blog/blog.html'
     context_object_name = "posts"
-    paginate_by = 5
+    ordering = ['-date_posted']
+    paginate_by = 4
 
 class PostDetailView(DetailView):
     """class based view for individual blog post"""

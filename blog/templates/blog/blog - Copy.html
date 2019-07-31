@@ -4,52 +4,53 @@
 {% block content %}
 <div class="main-blog container">
     <h1 class="row justify-content-center pt-3 font-weight-bold">Welcome to my blog</h1>
+    <!-- Blog main page-->
     <div class="row">
-        <!-- Blog Entries Column -->
+        <!-- Blog posts column-->
         <div class="col-md-8">
-            {% for post in posts %}
+        {% for post in posts %}
             <!-- Blog`s individual Post -->
             <div class="card blog-card bg-transparent border-0 pb-3 my-4">
                 <h2 class="card-title mb-1"><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
                 <small class="font-weight-bold text-muted pb-2">{{ post.date_posted|date:'F d, Y' }}</small>
                 <img class="card-img-top" src="{% static 'site_content/images/blogtest.jpg' %}" alt="blog">
                 <p>{{ post.content | slice:":300" }}...</p>
-                <div class="card-body">
-                    <a class="btn btn-outline-dark" href="{% url 'post-detail' post.id %}">&#139; Read More &#155;</a>
+                <a href="{% url 'post-detail' post.id %}" class="card-link">Read More</a>
+            </div> <!-- End Blog Post -->
+        {% endfor %}
+            <!-- Blog Post
+            <div class="card mb-4">
+                <div class="row">
+                    <img class="rounded-circle col-4" src="{{ post.author.profile.image.url }}">
+                    <img class="card-img-top col-8" src="http://placehold.it/750x300" alt="Card image cap">
                 </div>
-            </div> <!-- End Blog`s individual Post -->
-            {% endfor %}
+                <div class="card-body">
+                    <h2 class="card-title"><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+                    <p class="card-text">{{ post.content | slice:":400" }}...</p>
+                    <a href="{% url 'post-detail' post.id %}" class="btn btn-primary">Read More &rarr;</a>
+                </div>
+                <div class="card-footer text-muted">
+                    Posted on {{ post.date_posted|date:'F d, Y' }} by
+                    <a href="{% url 'profile-detail' post.author %}">{{ post.author }}</a>
+                </div>
+            </div> -->
+            
 
-            <!-- Div to center the pagination-->
-            <div class="pagination justify-content-center mb-4">
-                <!-- Pagination logic (if blog has multiple pages) -->
-                {% if is_paginated %}
-                    <!-- If current page has a previous page show First & Previous buttons -->
-                    {% if page_obj.has_previous %}
-                        <a class="btn btn-outline-dark mb-4" href="?page=1">First</a>
-                        <a class="btn btn-outline-dark mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
-                    {% endif %}
 
-                    <!-- Iterate through all the pages -->
-                    {% for num in page_obj.paginator.page_range %}
-                        <!-- If the iterator is the current page > display page number -->
-                        {% if page_obj.number == num %}
-                            <a class="btn btn-outline-dark mb-4" href="?page={{ num }}">{{ num }}</a>
-                        <!-- Else display a range of max 3 pages away from current page -->
-                        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                            <a class="btn btn-outline-dark mb-4" href="?page={{ num }}">{{ num }}</a>
-                        {% endif %}
-                    {% endfor %}
+            <!-- {% if is_paginated %}
 
-                    <!-- If current page has a next page show Next & Last buttons -->
-                    {% if page_obj.has_next %}
-                        <a class="btn btn-outline-dark mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
-                        <a class="btn btn-outline-dark mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-                    {% endif %}
-                <!-- End pagination logic-->
-                {% endif %}
-            </div> <!-- End Pagination div -->
-        </div> <!-- End Blog Entries Column -->
+            {% endif %} -->
+
+            <!-- Pagination -->
+            <ul class="pagination justify-content-center mb-4">
+                <li class="page-item">
+                    <a class="page-link" href="#">&larr; Older</a>
+                </li>
+                <li class="page-item disabled">
+                    <a class="page-link" href="#">Newer &rarr;</a>
+                </li>
+            </ul>
+        </div>
 
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4 pt-0">

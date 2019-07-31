@@ -35,11 +35,11 @@ nav.navbar-default {
 li.nav-item a.nav-link {
   font: bold 0.8rem 'Montserrat', sans-serif;
   margin: 0 0 !important;
-  padding: 10px 25px !important;
+  padding: 10px 20px !important;
   color: white !important;
   border: 1px solid rgba(0, 0, 0 ,0);
   display: inline-block;
-  min-width: 125px;
+  min-width: 120px;
 }
 
 li.nav-item a.nav-link.active, li.nav-item a.nav-link:hover {
@@ -129,24 +129,31 @@ footer svg {
   width: 24px;
 }
 
-/* SERVICES */
 
-/*  */
+/* SERVICES PAGE */
+
 .card-deck.services h2 {
   border-bottom: 2px solid #5D5D5D;
 }
-h4.row {
-  border-bottom: 1px solid #5D5D5D;
-  padding-left: 0 !important;
-}
 
+
+/* BLOG */
+
+.blog-card {
+  border-bottom: solid 1px #231709 !important;
+  border-radius: 0;
+}
+.pagination a.btn-outline-dark {
+  margin-left: 1px;
+  margin-right: 1px;
+}
+.pagination a.btn-outline-dark:hover {
+  background-color: #231709;
+}
 
 /* Mobile first media queries */
 
 @media only screen and (min-width: 576px) {
-  body {
-    background-image: url("images/background_768.jpg");
-  }
   #logo {
     background-image: url("images/logo576.png");
     background-size: 50%;
@@ -155,7 +162,7 @@ h4.row {
 
 @media only screen and (min-width: 768px) {
   body {
-    background-image: url("images/background_992.jpg");
+    background-image: url("images/background_768.jpg");
   }
   #logo {
     background-size: 45%;
@@ -166,8 +173,9 @@ h4.row {
     left: 10%;
   }
   li.nav-item a.nav-link {
-    margin: 0 10px !important;
-    font-size: 0.9rem;
+    margin: 0 14px !important;
+    padding: 10px 14px !important;
+    text-align: center;
   }
   .card.index-bio {
     -ms-flexbox-direction: row;
@@ -186,7 +194,7 @@ h4.row {
 
 @media only screen and (min-width: 992px) {
   body {
-    background-image: url("images/background_1200.jpg");
+    background-image: url("images/background_992.jpg");
   }
   #logo {
     background-size: 40%;
@@ -203,14 +211,14 @@ h4.row {
   }
 }
 
-@media only screen and (min-width: 1200px) { 
-  /* body {
-    background-image: url("images/background_1920.jpg");
-  } */
-  li.nav-item a.nav-link {
+@media only screen and (min-width: 1200px) {
+  body {
+    background-image: url("images/background_1200.jpg");
+  }
+  /* li.nav-item a.nav-link {
     margin: 0 40px !important;
     font-size: 1.1rem;
-  }
+  } */
   .card.index-bio p span {
     display: inline;
   }
