@@ -11,7 +11,7 @@ class Profile(models.Model):
     Profile model. Inherits the Django built in User model
     '''
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    image = models.ImageField(default='default_profile.jpg', upload_to='profile_pics')
 
     def __str__(self):
         return f'{self.user.username}'

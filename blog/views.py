@@ -9,11 +9,6 @@ from django.views.generic import (
 )
 from .models import Post
 
-# def blog(request):
-#     context = {
-#         'posts': Post.objects.all()
-#     }
-#     return render(request, 'blog/blog.html', context)
 
 class PostListView(ListView):
     """class based view for viewing the blog page"""
@@ -31,7 +26,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     """class view for creating new posts.
     It redirects you to the login page if user not logged in"""
     model = Post
-    fields = ['title', 'content']
+    fields = ['title', 'post_photo', 'content']
 
     def form_valid(self, form):
         form.instance.author = self.request.user

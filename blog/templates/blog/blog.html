@@ -12,7 +12,7 @@
             <div class="card blog-card bg-transparent border-0 pb-3 my-4">
                 <h2 class="card-title mb-1"><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
                 <small class="font-weight-bold text-muted pb-2">{{ post.date_posted|date:'F d, Y' }}</small>
-                <img class="card-img-top" src="{% static 'site_content/images/blogtest.jpg' %}" alt="blog">
+                <img class="card-img-top" src="{{ post.post_photo.url }}" alt="blog">
                 <p>{{ post.content | slice:":300" }}...</p>
                 <div class="card-body">
                     <a class="btn btn-outline-dark" href="{% url 'post-detail' post.id %}">&#139; Read More &#155;</a>
