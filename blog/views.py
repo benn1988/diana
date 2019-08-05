@@ -21,12 +21,15 @@ class PostListView(ListView):
 class PostDetailView(DetailView):
     """class based view for individual blog post"""
     model = Post
+    context_object_name = "post"
+    template_name = 'blog/view_post.html'
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     """class view for creating new posts.
     It redirects you to the login page if user not logged in"""
     model = Post
-    fields = ['title', 'post_photo', 'content']
+    fields = ['title', 'post_photo', 'content', 'category']
+    template_name = 'blog/new_post.html'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -36,7 +39,8 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """class view for updating posts.
     It does not allow you to edit other user`s posts"""
     model = Post
-    fields = ['title', 'content']
+    template_name = 'blog/new_post.html'
+    fields = ['title', 'post_photo', 'content']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -53,6 +57,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     Does not allow different user to delete the post, except the author"""
     model = Post
     success_url = '/blog/'
+    template_name = 'blog/delete_post.html'
 
     def test_func(self):
         post = self.get_object()

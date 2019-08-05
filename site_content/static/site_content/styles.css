@@ -1,9 +1,13 @@
 html, body {
   height: 100%;
+  background-color: #f0f0f0;
+  /* overflow-x: auto; */
 }
 
 /* Cover background image on body element */
 body {
+  padding: 0;
+  margin: 0;
   font-family: "Raleway", sans-serif;
   color: #231709;
   background-image: url("images/background_576.jpg");
@@ -11,7 +15,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   -moz-background-size: cover;
-  -webkit-background-size: content;
+  -webkit-background-size: cover;
   -o-background-size: cover;
 }
 
@@ -78,7 +82,7 @@ ul.navbar-nav li.nav-item:nth-child(n+2)::after {
   font-weight: 700;
   color: #231709;
   text-shadow: 1px 1px 1px white;
-  top: 80%;
+  top: 90%;
   left: 10%;
 }
 
@@ -128,6 +132,10 @@ footer svg {
   height: 24px;
   width: 24px;
 }
+footer svg:hover {
+  transition: all .4s ease;
+  transform: scale(1.2, 1.2);
+}
 
 
 /* SERVICES PAGE */
@@ -148,6 +156,22 @@ footer svg {
   margin-right: 1px;
 }
 .pagination a.btn-outline-dark:hover {
+  background-color: #231709;
+}
+.btn-outline-info:hover {
+  background-color: #231709;
+}
+.main-blog .card a {
+  text-decoration: none;
+}
+.main-blog .card h2 > a {
+  color: #231709;
+}
+.main-blog .card h2 > a:hover {
+  text-shadow: 1px 1px 1px #3d2810;
+}
+.pagination a.disabled {
+  color: white;
   background-color: #231709;
 }
 

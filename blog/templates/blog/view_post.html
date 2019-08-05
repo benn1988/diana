@@ -1,0 +1,30 @@
+{% extends 'blog/blog_base.html' %}
+<!-- {% block title %}Diana`s Blog{% endblock title %} -->
+{% block blogmain %}
+
+    <!-- Blog Post -->
+    <div class="card bg-transparent border-0 my-4">
+        <h2 class="card-title font-weight-bold">{{ post.title }}</h2>
+        <div class="d-flex justify-content-between py-3">
+            <div>{{ post.date_posted|date:'F d, Y' }}</div>
+            <a href="{% url 'profile-detail' post.author %}">{{ post.author }}</a>
+            <a class="btn btn-outline-dark" href="{% url 'blog' %}">{{ post.category }}</a>
+        </div>
+        <img class="card-img-top" src="{{ post.post_photo.url }}" alt="{{ post.title }}">
+        <div class="card-body px-0 text-justify">
+            <p class="card-text">{{ post.content|linebreaks }}</p>
+            <div class="row">
+                <a class="ml-auto btn btn-outline-dark btn-small ml-5 mr-3" href="{% url 'post-update' post.id %}">Edit</a>
+                <a class="btn btn-outline-danger btn-small" href="{% url 'post-delete' post.id %}">Delete</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to blog -->
+    <div class="justify-content-center">
+        <a class="text-secondary" href="{% url 'blog' %}">
+            <h4>Back to main page...</h4>
+        </a>
+    </div>
+
+{% endblock blogmain %}

@@ -1,118 +1,46 @@
-{% extends 'site_content/base.html' %}
-{% load static %}
-{% block title %}Diana`s Blog{% endblock title %}
-{% block content %}
-<div class="main-blog container">
-    <h1 class="row justify-content-center pt-3 font-weight-bold">Welcome to my blog</h1>
-    <div class="row">
-        <!-- Blog Entries Column -->
-        <div class="col-md-8">
-            {% for post in posts %}
-            <!-- Blog`s individual Post -->
-            <div class="card blog-card bg-transparent border-0 pb-3 my-4">
-                <h2 class="card-title mb-1"><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-                <small class="font-weight-bold text-muted pb-2">{{ post.date_posted|date:'F d, Y' }}</small>
-                <img class="card-img-top" src="{{ post.post_photo.url }}" alt="blog">
-                <p>{{ post.content | slice:":300" }}...</p>
-                <div class="card-body">
-                    <a class="btn btn-outline-dark" href="{% url 'post-detail' post.id %}">&#139; Read More &#155;</a>
-                </div>
-            </div> <!-- End Blog`s individual Post -->
+{% extends 'blog/blog_base.html' %}
+{% block blogmain %}
+
+    {% for post in posts %}
+        <!-- Blog`s individual Post -->
+        <div class="card blog-card bg-transparent border-0 pb-3 my-4">
+            <h2 class="card-title"><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+            <p class="pb-2">{{ post.date_posted|date:'F d, Y' }}</p>
+            <img class="card-img-top" src="{{ post.post_photo.url }}" alt="{{ post.title }} image">
+            <p>{{ post.content | slice:":300" }}...</p>
+            <div class="card-body">
+                <a class="btn btn-outline-dark" href="{% url 'post-detail' post.id %}">&#139; Read More &#155;</a>
+            </div>
+        </div> <!-- End Blog`s individual Post -->
+    {% endfor %}
+
+    <!-- Div to center the pagination-->
+    <div class="pagination justify-content-center mb-4">
+        <!-- Pagination logic (if blog has multiple pages) -->
+        {% if is_paginated %}
+            <!-- If current page has a previous page show First & Previous buttons -->
+            {% if page_obj.has_previous %}
+                <a class="btn btn-outline-dark mb-4" href="?page=1">First</a>
+                <a class="btn btn-outline-dark mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            {% endif %}
+
+            <!-- Iterate through all the pages -->
+            {% for num in page_obj.paginator.page_range %}
+                <!-- If the iterator is the current page > display page number -->
+                {% if page_obj.number == num %}
+                    <a class="btn btn-outline-dark disabled active mb-4" href="?page={{ num }}">{{ num }}</a>
+                <!-- Else display a range of max 3 pages away from current page -->
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <a class="btn btn-outline-dark mb-4" href="?page={{ num }}">{{ num }}</a>
+                {% endif %}
             {% endfor %}
 
-            <!-- Div to center the pagination-->
-            <div class="pagination justify-content-center mb-4">
-                <!-- Pagination logic (if blog has multiple pages) -->
-                {% if is_paginated %}
-                    <!-- If current page has a previous page show First & Previous buttons -->
-                    {% if page_obj.has_previous %}
-                        <a class="btn btn-outline-dark mb-4" href="?page=1">First</a>
-                        <a class="btn btn-outline-dark mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
-                    {% endif %}
+            <!-- If current page has a next page show Next & Last buttons -->
+            {% if page_obj.has_next %}
+                <a class="btn btn-outline-dark mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+                <a class="btn btn-outline-dark mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+            {% endif %} <!-- End Next & Last buttons logic-->
+        {% endif %} <!-- End pagination logic-->
+    </div> <!-- End Pagination div -->
 
-                    <!-- Iterate through all the pages -->
-                    {% for num in page_obj.paginator.page_range %}
-                        <!-- If the iterator is the current page > display page number -->
-                        {% if page_obj.number == num %}
-                            <a class="btn btn-outline-dark mb-4" href="?page={{ num }}">{{ num }}</a>
-                        <!-- Else display a range of max 3 pages away from current page -->
-                        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                            <a class="btn btn-outline-dark mb-4" href="?page={{ num }}">{{ num }}</a>
-                        {% endif %}
-                    {% endfor %}
-
-                    <!-- If current page has a next page show Next & Last buttons -->
-                    {% if page_obj.has_next %}
-                        <a class="btn btn-outline-dark mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
-                        <a class="btn btn-outline-dark mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-                    {% endif %}
-                <!-- End pagination logic-->
-                {% endif %}
-            </div> <!-- End Pagination div -->
-        </div> <!-- End Blog Entries Column -->
-
-        <!-- Sidebar Widgets Column -->
-        <div class="col-md-4 pt-0">
-
-            <!-- Search Widget -->
-            <div class="card my-4">
-                <h5 class="card-header">Search</h5>
-                <div class="card-body">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-secondary" type="button">Go!</button>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Categories Widget -->
-            <div class="card my-4">
-                <h5 class="card-header">Categories</h5>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled mb-0">
-                                <li>
-                                    <a href="#">Web Design</a>
-                                </li>
-                                <li>
-                                    <a href="#">HTML</a>
-                                </li>
-                                <li>
-                                    <a href="#">Freebies</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled mb-0">
-                                <li>
-                                    <a href="#">JavaScript</a>
-                                </li>
-                                <li>
-                                    <a href="#">CSS</a>
-                                </li>
-                                <li>
-                                    <a href="#">Tutorials</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Side Widget -->
-            <div class="card my-4">
-                <h5 class="card-header">Side Widget</h5>
-                <div class="card-body">
-                    You can put anything you want inside of these side widgets. They are easy to use, and feature the
-                    new Bootstrap 4 card containers!
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</div>
-{% endblock content %}
+{% endblock blogmain %}

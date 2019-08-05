@@ -1,0 +1,88 @@
+{% extends 'site_content/base.html' %}
+{% load static %}
+{% block title %}Diana`s Blog{% endblock title %}
+{% block content %}
+
+<div class="container main-blog">
+     <!-- Main row for blog entries and sidebar -->
+    <div class="row">
+
+        <div class="col-md-8"> <!-- Blog Entries Column -->
+            {% block blogmain %}{% endblock blogmain %}
+        </div> <!-- End blog Entries Column -->
+
+        <!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+            <!-- Profile Widget -->
+            <div class="card my-4 bg-transparent border-0">
+                    <!-- Buttons to Log In/Register, depending if user is logged in or not -->
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            {% if request.user.is_authenticated %}
+                                <a class="btn btn-outline-dark px-2 col-6" href="{% url 'profile' %}">Profile</a>
+                                <a class="btn btn-outline-dark px-2 col-6" href="{% url 'logout' %}">Log Out</a>
+                            {% else %}
+                                <a class="btn btn-outline-dark px-2 col-6" href="{% url 'register' %}">Register</a>
+                                <a class="btn btn-outline-dark px-2 col-6" href="{% url 'login' %}">Log In</a>
+                            {% endif %}
+                        </div> <!-- End card-body row -->
+                    </div> <!-- End card-body -->
+                </div> <!-- End Profile Widget -->
+
+            <!-- Profile Widget -->
+            <div class="card my-4 bg-transparent border-0">
+                <!-- Buttons to Log In/Register, depending if user is logged in or not -->
+                <div class="card-body">
+                    <div class="row justify-content-center">
+                        {% if request.user.is_authenticated %}
+                            <a class="btn btn-outline-dark px-2 col-6" href="{% url 'profile' %}">Profile</a>
+                            <a class="btn btn-outline-dark px-2 col-6" href="{% url 'logout' %}">Log Out</a>
+                        {% else %}
+                            <a class="btn btn-outline-dark px-2 col-6" href="{% url 'register' %}">Register</a>
+                            <a class="btn btn-outline-dark px-2 col-6" href="{% url 'login' %}">Log In</a>
+                        {% endif %}
+                    </div> <!-- End card-body row -->
+                </div> <!-- End card-body -->
+            </div> <!-- End Profile Widget -->
+
+            <!-- Categories Widget -->
+            <div class="card my-4">
+                <h5 class="card-header">Categories</h5>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#">Web Design</a>
+                                </li>
+                                <li>
+                                    <a href="#">HTML</a>
+                                </li>
+                                <li>
+                                    <a href="#">Freebies</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#">JavaScript</a>
+                                </li>
+                                <li>
+                                    <a href="#">CSS</a>
+                                </li>
+                                <li>
+                                    <a href="#">Tutorials</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> <!-- End card-boy row -->
+                </div> <!-- End card-body -->
+            </div> <!-- End Categories Widget -->
+
+        </div> <!-- End Sidebar Widgets Column -->
+    </div> <!-- End main blog row-->
+</div> <!-- End main-blog container-->
+
+{% endblock content %}
