@@ -14,18 +14,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
+from django.contrib.auth.decorators import permission_required
 from .views import (
     PostListView,
     PostDetailView,
     PostCreateView,
     PostUpdateView,
-    PostDeleteView
+    PostDeleteView,
+    CategoryListView,
 )
 
 urlpatterns = [
     path('', PostListView.as_view(), name='blog'),
+    path('category/<category>/', CategoryListView.as_view(), name='category'),
     path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
-    path('post/new/', PostCreateView.as_view(), name='post-create'),
+    path('post/new/',
+         permission_required('blog.can_add')(PostCreateView.as_view()),
+         name='post-create'),
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
 ]

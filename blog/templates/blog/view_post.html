@@ -3,28 +3,27 @@
 {% block blogmain %}
 
     <!-- Blog Post -->
-    <div class="card bg-transparent border-0 my-4">
-        <h2 class="card-title font-weight-bold">{{ post.title }}</h2>
-        <div class="d-flex justify-content-between py-3">
-            <div>{{ post.date_posted|date:'F d, Y' }}</div>
-            <a href="{% url 'profile-detail' post.author %}">{{ post.author }}</a>
-            <a class="btn btn-outline-dark" href="{% url 'blog' %}">{{ post.category }}</a>
+    <div class="card bg-transparent border-0 pb-3 my-4">
+        <h2 class="card-title font-weight-bold mt-3">{{ post.title }}</h2>
+        <div class="d-flex align-items-end justify-content-between my-1 mb-3">
+            <a class="btn btn-dark" href="{% url 'category' post.category %}">{{ post.category }}</a>
+            <p id="test">{{ post.date_posted|date:'F d, Y' }}</p>
         </div>
         <img class="card-img-top" src="{{ post.post_photo.url }}" alt="{{ post.title }}">
         <div class="card-body px-0 text-justify">
             <p class="card-text">{{ post.content|linebreaks }}</p>
-            <div class="row">
-                <a class="ml-auto btn btn-outline-dark btn-small ml-5 mr-3" href="{% url 'post-update' post.id %}">Edit</a>
-                <a class="btn btn-outline-danger btn-small" href="{% url 'post-delete' post.id %}">Delete</a>
+            {% if request.user.is_staff %}
+            <div class="row pt-3">
+                <a class="ml-auto btn btn-dark btn-small ml-5 mr-3" href="{% url 'post-update' post.id %}">Edit</a>
+                <a class="btn btn-danger btn-small" href="{% url 'post-delete' post.id %}">Delete</a>
             </div>
+            {% endif %}
         </div>
     </div>
 
     <!-- Back to blog -->
-    <div class="justify-content-center">
-        <a class="text-secondary" href="{% url 'blog' %}">
-            <h4>Back to main page...</h4>
-        </a>
-    </div>
+    <a href="{% url 'blog' %}">
+        <h4 class="d-inline-block mb-4 font-weight-bold"> &#8592; Back to main page</h4>
+    </a>
 
 {% endblock blogmain %}

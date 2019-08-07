@@ -1,19 +1,17 @@
 html, body {
   height: 100%;
   background-color: #f0f0f0;
+  /* overflow-x: auto; */
 }
 
 /* Cover background image on body element */
 body {
+  padding: 0;
+  margin: 0;
   font-family: "Raleway", sans-serif;
   color: #231709;
-}
-
-header {
-  position: relative;
   background-image: url("images/background_576.jpg");
-  height: 75%;
-  background-position: center 48px;
+  background-position: center 52.8px;
   background-repeat: no-repeat;
   background-size: cover;
   -moz-background-size: cover;
@@ -69,7 +67,7 @@ ul.navbar-nav li.nav-item:nth-child(n+2)::after {
 
 /* Diana staver logo */
 #logo {
-  background-position: 5% 50%;
+  background-position: 5% 60%;
   background-image: url("images/logo320.png");
   background-repeat: no-repeat;
   height: 100%;
@@ -84,7 +82,7 @@ ul.navbar-nav li.nav-item:nth-child(n+2)::after {
   font-weight: 700;
   color: #231709;
   text-shadow: 1px 1px 1px white;
-  top: 60%;
+  top: 90%;
   left: 10%;
 }
 
@@ -170,26 +168,11 @@ footer svg:hover {
   color: #231709;
 }
 .main-blog .card h2 > a:hover {
-  color: #8c796c;
-}
-.main-blog a > h4 {
-  color: #231709;
-}
-.main-blog a > h4:hover {
-  color: #8c796c;
-}
-.main-blog .btn-dark {
-  background-color: #231709;
-}
-.main-blog .btn-dark:hover {
-  background-color: #8c796c;
+  text-shadow: 1px 1px 1px #3d2810;
 }
 .pagination a.disabled {
   color: white;
   background-color: #231709;
-}
-#test {
-  margin-bottom: 0;
 }
 
 
@@ -203,7 +186,7 @@ footer svg:hover {
 }
 
 @media only screen and (min-width: 768px) {
-  header {
+  body {
     background-image: url("images/background_768.jpg");
   }
   #logo {
@@ -235,7 +218,7 @@ footer svg:hover {
 }
 
 @media only screen and (min-width: 992px) {
-  header {
+  body {
     background-image: url("images/background_992.jpg");
   }
   #logo {
@@ -254,7 +237,7 @@ footer svg:hover {
 }
 
 @media only screen and (min-width: 1200px) {
-  header {
+  body {
     background-image: url("images/background_1200.jpg");
   }
   /* li.nav-item a.nav-link {

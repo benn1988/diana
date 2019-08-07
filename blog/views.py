@@ -1,11 +1,10 @@
-# from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (
     ListView,
     DetailView,
     CreateView,
     UpdateView,
-    DeleteView
+    DeleteView,
 )
 from .models import Post
 
@@ -18,11 +17,21 @@ class PostListView(ListView):
     ordering = ['-date_posted']
     paginate_by = 4
 
+
+class CategoryListView(PostListView):
+    """class based view for viewing posts for specific category """
+    ordering = ['-date_posted']
+
+    def get_queryset(self):
+        return Post.objects.filter(category=self.kwargs['category'])
+
+
 class PostDetailView(DetailView):
     """class based view for individual blog post"""
     model = Post
     context_object_name = "post"
     template_name = 'blog/view_post.html'
+
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     """class view for creating new posts.
@@ -34,6 +43,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """class view for updating posts.
