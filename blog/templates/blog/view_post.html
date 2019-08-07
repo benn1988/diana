@@ -6,7 +6,7 @@
     <div class="card bg-transparent border-0 pb-3 my-4">
         <h2 class="card-title font-weight-bold mt-3">{{ post.title }}</h2>
         <div class="d-flex align-items-end justify-content-between my-1 mb-3">
-            <a class="btn btn-dark" href="{% url 'category' post.category %}">{{ post.category }}</a>
+            <a class="btn btn-dark" href="{% url 'category' post.category %}">{{ post.category|title }}</a>
             <p id="test">{{ post.date_posted|date:'F d, Y' }}</p>
         </div>
         <img class="card-img-top" src="{{ post.post_photo.url }}" alt="{{ post.title }}">

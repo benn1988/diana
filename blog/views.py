@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import (
     ListView,
     DetailView,
@@ -20,7 +21,6 @@ class PostListView(ListView):
 
 class CategoryListView(PostListView):
     """class based view for viewing posts for specific category """
-    ordering = ['-date_posted']
 
     def get_queryset(self):
         return Post.objects.filter(category=self.kwargs['category'])
@@ -33,24 +33,26 @@ class PostDetailView(DetailView):
     template_name = 'blog/view_post.html'
 
 
-class PostCreateView(LoginRequiredMixin, CreateView):
+class PostCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     """class view for creating new posts.
     It redirects you to the login page if user not logged in"""
     model = Post
     fields = ['title', 'post_photo', 'content', 'category']
     template_name = 'blog/new_post.html'
+    success_message = 'New post created successful'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
 
-class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, UpdateView):
     """class view for updating posts.
     It does not allow you to edit other user`s posts"""
     model = Post
     template_name = 'blog/new_post.html'
     fields = ['title', 'post_photo', 'content']
+    success_message = 'Post updated successful'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -58,19 +60,20 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         post = self.get_object()
-        if self.request.user == post.author:
+        if self.request.user == post.author or self.request.user.is_staff:
             return True
         return False
 
-class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
     """class based view for deleting any individual blog post.
     Does not allow different user to delete the post, except the author"""
     model = Post
     success_url = '/blog/'
     template_name = 'blog/delete_post.html'
+    success_message = 'Post deleted successful'
 
     def test_func(self):
         post = self.get_object()
-        if self.request.user == post.author:
+        if self.request.user == post.author or self.request.user.is_staff:
             return True
         return False

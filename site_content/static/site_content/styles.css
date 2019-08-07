@@ -5,7 +5,7 @@ html, body {
 
 /* Cover background image on body element */
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #231709;
 }
 
@@ -20,6 +20,7 @@ header {
   -webkit-background-size: cover;
   -o-background-size: cover;
 }
+
 
 /* Background color on main element */
 main {
@@ -88,6 +89,13 @@ ul.navbar-nav li.nav-item:nth-child(n+2)::after {
   left: 10%;
 }
 
+.container .btn-dark {
+  font-weight: 700;
+}
+.container .btn-dark:hover {
+  background-color: #8c796c;
+}
+
 /* Card with bio on index page */
 .card.index-bio {
   display: flex;
@@ -107,24 +115,14 @@ ul.navbar-nav li.nav-item:nth-child(n+2)::after {
 }
 
 .card.index-bio a.btn {
-  background-color: #3d2810;
-  color: white;
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
   display: none;
 }
 
-.card.index-bio a.btn:hover {
-  background-color: #231709;
-}
 .card.index-bio img {
   max-height: 491px;
   max-width: 334px;
 }
-.container.index-page {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
+
 
 /* Footer CSS */
 footer {
@@ -178,11 +176,8 @@ footer svg:hover {
 .main-blog a > h4:hover {
   color: #8c796c;
 }
-.main-blog .btn-dark {
+.container .btn-dark {
   background-color: #231709;
-}
-.main-blog .btn-dark:hover {
-  background-color: #8c796c;
 }
 .pagination a.disabled {
   color: white;
@@ -190,6 +185,19 @@ footer svg:hover {
 }
 #test {
   margin-bottom: 0;
+}
+.main-blog ul li {
+  border-bottom: solid 1px #231709;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+.main-blog ul li a {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #231709;
+}
+.main-blog ul li a:hover {
+  color: #8c796c;
 }
 
 

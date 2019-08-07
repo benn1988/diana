@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 {% block title %}Registration Form{% endblock title %}
 {% block content %}
-    <div class="container">
+    <div class="container" style="max-width: 960px">
         <div class="content-section  mt-4">
             <form method="POST">
                 {% csrf_token %}
@@ -11,7 +11,7 @@
                     {{ form|crispy }}
                 </fieldset>
                 <div class="form-group">
-                    <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                    <button class="btn btn-dark" type="submit">Sign Up</button>
                 </div>
             </form>
             <div class="border-top pt-3">
