@@ -6,6 +6,7 @@ html, body {
 /* Cover background image on body element */
 body {
   font-family: "Roboto", sans-serif;
+  line-height: 1.4rem;
   color: #231709;
 }
 

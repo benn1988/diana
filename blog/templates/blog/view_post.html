@@ -1,5 +1,5 @@
 {% extends 'blog/blog_base.html' %}
-<!-- {% block title %}Diana`s Blog{% endblock title %} -->
+{% block title %}{{ post.category|title }}: {{ post.title }}{% endblock title %}
 {% block blogmain %}
 
     <!-- Blog Post -->
