@@ -12,10 +12,11 @@
         <img class="card-img-top" src="{{ post.post_photo.url }}" alt="{{ post.title }}">
         <div class="card-body px-0 text-justify">
             <p class="card-text">{{ post.content|linebreaks }}</p>
+            <a class="btn btn-danger btn-small" href="{% url 'post-detail' post.id %}">View same post</a>
             {% if request.user.is_staff %}
             <div class="row pt-3">
-                <a class="ml-auto btn btn-dark btn-small ml-5 mr-3" href="{% url 'post-update' post.id %}">Edit</a>
-                <a class="btn btn-danger btn-small" href="{% url 'post-delete' post.id %}">Delete</a>
+                <a class="ml-auto btn btn-dark ml-5 mr-3" href="{% url 'post-update' post.id %}">Edit</a>
+                <a class="btn btn-danger" href="{% url 'post-delete' post.id %}">Delete</a>
             </div>
             {% endif %}
         </div>
