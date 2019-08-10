@@ -39,7 +39,7 @@ class PostCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Post
     fields = ['title', 'post_photo', 'content', 'category']
     template_name = 'blog/new_post.html'
-    success_message = 'New post created successful'
+    success_message = 'New post created successfully'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
