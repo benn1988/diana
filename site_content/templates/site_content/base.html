@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Diana Staver is a hairstyle specialist with more than 7 years of experience">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#231709">
     <meta name="msapplication-TileColor" content="#00aba9">
 
     <!-- Favicon options -->
@@ -79,8 +79,10 @@
     <main role="main">
         {% if messages %}
             {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">
-                {{ message }}
+            <div class="container">
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
             </div>
             {% endfor %}
         {% endif %}
