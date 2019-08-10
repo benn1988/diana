@@ -48,24 +48,24 @@
         </button>
         <div class="collapse navbar-collapse flex-column" id="navbarResponsive">
             <ul class="navbar-nav">
-                <li class="nav-item">
+                <li class="nav-item my-1 my-md-0">
                     <a class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}"
                         href="{% url 'index' %}">HOME</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item my-1 my-md-0">
                     <a class="nav-link  {% if request.resolver_match.url_name == 'services' %}active{% endif %}"
                         href="{% url 'services' %}">SERVICES</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item my-1 my-md-0">
                     <a class="nav-link {% if request.resolver_match.url_name == 'gallery' %}active{% endif %}"
                         href="{% url 'gallery' %}">GALLERY</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item my-1 my-md-0">
                     <a class="nav-link {% if request.resolver_match.url_name == 'blog' %}active{% endif %}"
                         href="{% url 'blog'  %}">BLOG</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link  {% if request.resolver_match.url_name == 'contact' %}active{% endif %}"
+                <li class="nav-item my-1 my-md-0">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}"
                         href="{% url 'contact' %}">CONTACTS</a>
                 </li>
             </ul>
