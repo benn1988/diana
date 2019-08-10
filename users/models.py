@@ -16,27 +16,27 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username}'
 
-    def save(self, *args, **kwargs):
-        '''
-        Override for the save method to be able to save the picture to the profile.
-        Also it uses the PIL library to resize photos uploaded by the user
-        '''
-        super().save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     '''
+    #     Override for the save method to be able to save the picture to the profile.
+    #     Also it uses the PIL library to resize photos uploaded by the user
+    #     '''
+    #     super().save(*args, **kwargs)
 
-        img = Image.open(self.image.path)
-        # crop the image size
-        if img.height > 300 or img.width > 300:
-            output_size = (300, 300)
-            img.thumbnail(output_size)
-            width, height = img.size
-        # make the image ratio square
-            if img.width < 300:
-                left = 0
-                top = (height - width) / 2
-                right = width
-                bottom = width + top
-                img = img.crop((left, top, right, bottom))
-            width, height = img.size
-            if img.height < 300:
-                img = img.crop(((width-height)/2, 0, height +(width-height)/2, height))
-            img.save(self.image.path)
+    #     img = Image.open(self.image.path)
+    #     # crop the image size
+    #     if img.height > 300 or img.width > 300:
+    #         output_size = (300, 300)
+    #         img.thumbnail(output_size)
+    #         width, height = img.size
+    #     # make the image ratio square
+    #         if img.width < 300:
+    #             left = 0
+    #             top = (height - width) / 2
+    #             right = width
+    #             bottom = width + top
+    #             img = img.crop((left, top, right, bottom))
+    #         width, height = img.size
+    #         if img.height < 300:
+    #             img = img.crop(((width-height)/2, 0, height +(width-height)/2, height))
+    #         img.save(self.image.path)
