@@ -1,4 +1,8 @@
-{% extends 'blog/blog_base.html' %}
+{% extends 'blog/blog_base-min.html' %}
+{% load disqus_tags %}
+{% set_disqus_identifier post.id %}
+{% set_disqus_url post.get_absolute_url %}
+{% set_disqus_title post.title %}
 {% block title %}{{ post.category|title }}: {{ post.title }}{% endblock title %}
 {% block blogmain %}
 
@@ -20,22 +24,9 @@
             {% endif %}
         </div>
     </div>
-    <!-- <div id="disqus_thread"></div>
-    <script>
-        var disqus_config = function () {
-        this.page.url = "{% url 'post-detail' post.id %}";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "{{ post.id }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
 
-        (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = 'https://diana-staver.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the comments</noscript> -->
-
+    {% disqus_show_comments %}
+    
     <!-- Back to blog -->
     <a href="{% url 'blog' %}">
         <h4 class="d-inline-block mb-4 font-weight-bold"> &#8592; Back to main page</h4>
