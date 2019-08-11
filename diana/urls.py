@@ -23,7 +23,7 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('', include('site_content.urls')),
     path('', include('users.urls')),
-    re_path(r'^comments/', include('django_comments.urls')),
+    path('comments/', include('django_comments.urls')),
 ]
 
 if settings.DEBUG:
