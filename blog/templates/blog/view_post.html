@@ -1,8 +1,8 @@
 {% extends 'blog/blog_base-min.html' %}
-{% load disqus_tags %}
+<!-- {% load disqus_tags %}
 {% set_disqus_identifier post.id %}
 {% set_disqus_url post.get_absolute_url %}
-{% set_disqus_title post.title %}
+{% set_disqus_title post.title %} -->
 {% block title %}{{ post.category|title }}: {{ post.title }}{% endblock title %}
 {% block blogmain %}
 
@@ -20,13 +20,29 @@
             <div class="row pt-3">
                 <a class="ml-auto btn btn-dark ml-5 mr-3" href="{% url 'post-update' post.id %}">Edit</a>
                 <a class="btn btn-danger" href="{% url 'post-delete' post.id %}">Delete</a>
+                <p>{{ post.get_absolute_url }}</p>
             </div>
             {% endif %}
         </div>
     </div>
 
-    {% disqus_show_comments %}
-    
+    <!-- {% disqus_show_comments %} -->
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+        this.page.url = "{{ post.get_absolute_url }}";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "{{ post.id }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://diana-staver.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
     <!-- Back to blog -->
     <a href="{% url 'blog' %}">
         <h4 class="d-inline-block mb-4 font-weight-bold"> &#8592; Back to main page</h4>
