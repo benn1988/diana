@@ -206,14 +206,14 @@ footer svg:hover {
 
 @media only screen and (min-width: 576px) {
   #logo {
-    background-image: url("images/logo576.png");
+    background-image: url("images/logo768.png");
     background-size: 50%;
   }
 }
 
 @media only screen and (min-width: 768px) {
   header {
-    background-image: url("images/background_768.jpg");
+    background-image: url("images/background_992.jpg");
   }
   #logo {
     background-size: 45%;
@@ -245,7 +245,7 @@ footer svg:hover {
 
 @media only screen and (min-width: 992px) {
   header {
-    background-image: url("images/background_992.jpg");
+    background-image: url("images/background_1200.jpg");
   }
   #logo {
     background-size: 40%;
@@ -264,7 +264,7 @@ footer svg:hover {
 
 @media only screen and (min-width: 1200px) {
   header {
-    background-image: url("images/background_1200.jpg");
+    background-image: url("images/background_1920.jpg");
   }
   /* li.nav-item a.nav-link {
     margin: 0 40px !important;
