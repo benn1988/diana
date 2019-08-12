@@ -13,6 +13,7 @@ isort==4.3.18
 jmespath==0.9.4
 lazy-object-proxy==1.4.0
 mccabe==0.6.1
+mock==3.0.5
 Pillow==6.0.0
 psycopg2==2.8.3
 pylint==2.3.1
