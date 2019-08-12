@@ -13,7 +13,7 @@ from .models import Post
 class PostListView(ListView):
     """class based view for viewing the blog page"""
     model = Post
-    template_name = 'blog/blog-min.html'
+    template_name = 'blog/blog.html'
     context_object_name = "posts"
     ordering = ['-date_posted']
     paginate_by = 4
@@ -39,7 +39,7 @@ class PostCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Post
     fields = ['title', 'post_photo', 'content', 'category']
     template_name = 'blog/new_post.html'
-    success_message = 'New post created successfully'
+    success_message = 'New post created successful'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -69,7 +69,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixi
     Does not allow different user to delete the post, except the author"""
     model = Post
     success_url = '/blog/'
-    template_name = 'blog/delete_post-min.html'
+    template_name = 'blog/delete_post.html'
     success_message = 'Post deleted successful'
 
     def test_func(self):

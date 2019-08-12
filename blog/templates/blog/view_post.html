@@ -1,4 +1,4 @@
-{% extends 'blog/blog_base-min.html' %}
+{% extends 'blog/blog_base.html' %}
 {% block title %}{{ post.category|title }}: {{ post.title }}{% endblock title %}
 {% block blogmain %}
 
@@ -14,33 +14,16 @@
             <p class="card-text">{{ post.content|linebreaks }}</p>
             {% if request.user.is_staff %}
             <div class="row pt-3">
-                <a class="ml-auto btn btn-dark ml-5 mr-3" href="{% url 'post-update' post.id %}">Edit</a>
-                <a class="btn btn-danger" href="{% url 'post-delete' post.id %}">Delete</a>
+                <a class="ml-auto btn btn-dark btn-small ml-5 mr-3" href="{% url 'post-update' post.id %}">Edit</a>
+                <a class="btn btn-danger btn-small" href="{% url 'post-delete' post.id %}">Delete</a>
             </div>
             {% endif %}
         </div>
     </div>
 
-    <div id="disqus_thread"></div>
-
-    <script>
-        var disqus_config = function () {
-        this.page.url = 'https://dianastaver.com/blog/post/{{ post.id }}';
-        this.page.identifier = '{{ post.id }}';
-        };
-
-        (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = 'https://dianastaver.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    
     <!-- Back to blog -->
     <a href="{% url 'blog' %}">
-        <h4 class="d-inline-block my-4 font-weight-bold"> &#8592; Back to main page</h4>
+        <h4 class="d-inline-block mb-4 font-weight-bold"> &#8592; Back to main page</h4>
     </a>
 
 {% endblock blogmain %}
