@@ -206,7 +206,7 @@ footer svg:hover {
 
 @media only screen and (min-width: 576px) {
   #logo {
-    background-image: url("images/logo768.png");
+    background-image: url("images/logo576.png");
     background-size: 50%;
   }
 }
