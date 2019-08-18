@@ -26,7 +26,7 @@ header {
 }
 
 .webp header {
-  background-image: url("images/background_576.webp");
+  background-image: url("images/background_992.webp");
 }
 
 
@@ -244,7 +244,7 @@ footer svg:hover {
   }
   
   .webp header {
-    background-image: url("images/background_992.webp");
+    background-image: url("images/background_1200.webp");
   }
 
   #logo {
@@ -281,7 +281,7 @@ footer svg:hover {
   }
   
   .webp header {
-    background-image: url("images/background_1200.webp");
+    background-image: url("images/background_1920.webp");
   }
 
   #logo {
@@ -302,10 +302,6 @@ footer svg:hover {
 @media only screen and (min-width: 1200px) {
   .no-js header, .nowebp header {
     background-image: url("images/background_1920.jpg");
-  }
-  
-  .webp header {
-    background-image: url("images/background_1920.webp");
   }
   .card.index-bio p span {
     display: inline;
