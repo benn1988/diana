@@ -22,13 +22,14 @@ class GalleryView(ListView):
     model = Photo
     template_name = 'site_content/gallery.html'
     paginate_by = 9
+    ordering = ['-date_uploaded']
 
 class PhotoUploadView(PermissionRequiredMixin, SuccessMessageMixin, CreateView):
     """class view for uploading new photos.
     It redirects to the login page if user does not have add permission"""
     model = Photo
     permission_required = 'site_content.add_photo'
-    fields = ['title', 'photo', 'categories']
+    fields = ['title', 'photo_full', 'photo_thumbnail', 'categories']
     template_name = 'site_content/photo_upload.html'
     success_message = 'New photo uploaded successfully'
     success_url = '/gallery/'
