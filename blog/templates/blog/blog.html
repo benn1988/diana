@@ -3,15 +3,16 @@
     {% if posts %}
         {% for post in posts %}
             <!-- Blog`s individual Post -->
-            <div class="card blog-card bg-transparent border-0 pb-3 my-4">
+            <article class="card blog-card bg-transparent border-0 pb-3 my-4">
                 <h2 class="card-title font-weight-bold mt-3"><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
                 <p class="my-1">{{ post.date_posted|date:'F d, Y' }}</p>
-                <img class="card-img-top" src="{{ post.post_photo.url }}" alt="{{ post.title }} image">
+                <a href="{% url 'post-detail' post.id %}">
+                <img class="card-img-top" src="{{ post.post_photo.url }}" alt="{{ post.title }} image"></a>
                 <p>{{ post.content | truncatewords:40 }}...</p>
                 <div class="card-body">
                     <a class="btn btn-dark" href="{% url 'post-detail' post.id %}">&#139; Read More &#155;</a>
                 </div>
-            </div> <!-- End Blog`s individual Post -->
+            </article> <!-- End Blog`s individual Post -->
         {% endfor %}
     {% else %}
         <h3 class="row font-weight-bold justify-content-center mt-4">Nothing matched your request</h3>

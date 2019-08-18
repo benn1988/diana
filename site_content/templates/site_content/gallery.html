@@ -1,5 +1,58 @@
 {% extends 'site_content/base.html' %}
-{% block title %}Diana`s gallery{% endblock title %}
+{% block title %}Gallery{% endblock title %}
 {% block content %}
-<h1 class="title my-5 row justify-content-center">COMING SOON</h1>
+    <div class="container">
+    {% if perms.site_content.add_photo %}
+        <a class="ml-auto btn btn-dark" href="{% url 'photo-upload' %}">Upload Photo</a>
+    {% endif %}
+    {% if object_list %}
+        <h1 class="row justify-content-center my-4 font-weight-bold">My Works</h1>
+        <div class="card-columns">
+        {% for photo in object_list %}
+            <div class="card">
+                <a href="{{ photo.photo.url }}" data-fancybox="gallery" data-caption="{{ photo.title }}">
+                    <img class="card-img" src="{{ photo.photo.url }}" alt="{{ photo.title }}">
+                </a>
+            </div>
+            {% if perms.site_content.add_photo %}
+                <div class="card-footer">
+                    <a class="ml-auto btn btn-dark" href="{% url 'photo-edit' photo.id %}">Edit</a>
+                    <a class="btn btn-danger" href="{% url 'photo-delete' photo.id %}">Delete</a>
+                </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+    {% else %}
+    <h3 class="row font-weight-bold justify-content-center mt-4">No Photos yet</h3>
+    {% endif %}
+
+    <!-- Pagination logic (if gallery has multiple pages) -->
+    {% if is_paginated %}
+        <!-- Div to center the pagination-->
+        <div class="pagination justify-content-center mb-4">
+                <!-- If current page has a previous page show First & Previous buttons -->
+                {% if page_obj.has_previous %}
+                    <a class="btn btn-outline-dark mb-4" href="?page=1">First</a>
+                    <a class="btn btn-outline-dark mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                {% endif %}
+
+                <!-- Iterate through all the pages -->
+                {% for num in page_obj.paginator.page_range %}
+                    <!-- If the iterator is the current page > display page number -->
+                    {% if page_obj.number == num %}
+                        <a class="btn btn-outline-dark disabled active mb-4" href="?page={{ num }}">{{ num }}</a>
+                    <!-- Else display a range of max 3 pages away from current page -->
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                        <a class="btn btn-outline-dark mb-4" href="?page={{ num }}">{{ num }}</a>
+                    {% endif %}
+                {% endfor %}
+
+                <!-- If current page has a next page show Next & Last buttons -->
+                {% if page_obj.has_next %}
+                    <a class="btn btn-outline-dark mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+                    <a class="btn btn-outline-dark mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+                {% endif %} <!-- End Next & Last buttons logic-->
+            {% endif %} <!-- End pagination logic-->
+        </div> <!-- End Pagination div -->
+    </div> <!-- End Container div -->
 {% endblock content %}

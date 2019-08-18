@@ -12,7 +12,7 @@
         </div> <!-- End blog Entries Column -->
 
         <!-- Sidebar Widgets Column -->
-        <div class="col-md-4">
+        <aside class="col-md-4">
             <!-- Profile Widget -->
             <div class="card mt-5 bg-transparent">
                 <!-- Buttons to Log In/Register, depending if user is logged in or not -->
@@ -23,8 +23,8 @@
                             <a class="btn btn-dark col-8 my-2" href="{% url 'profile' %}">Profile</a>
                             <a class="btn btn-dark col-8" href="{% url 'logout' %}?next={{request.path}}">Log Out</a>
 
-                            <!-- New Post btn for staff members only -->
-                            {% if user.is_staff %}
+                            <!-- New Post btn for members with add permission only -->
+                            {% if perms.blog.add_post %}
                                 <a class="btn btn-dark col-8 my-2" href="{% url 'post-create' %}">New Post</a>
                              {% endif %}
 
@@ -57,7 +57,7 @@
                 </div> <!-- End card-body -->
             </div> <!-- End Categories Widget -->
 
-        </div> <!-- End Sidebar Widgets Column -->
+        </aside> <!-- End Sidebar Widgets Column -->
     </div> <!-- End main blog row-->
 </div> <!-- End main-blog container-->
 

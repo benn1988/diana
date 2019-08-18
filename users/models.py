@@ -4,7 +4,7 @@ Model for the users app
 
 from django.db import models
 from django.contrib.auth.models import User
-from PIL import Image
+
 
 class Profile(models.Model):
     '''

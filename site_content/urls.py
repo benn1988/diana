@@ -15,11 +15,22 @@ Including another URLconf
 """
 
 from django.urls import path
-from . import views
+from .views import (
+    ServicesView,
+    GalleryView,
+    ContactView,
+    IndexView,
+    PhotoUploadView,
+    PhotoDeleteView,
+    PhotoEditView,
+)
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('services/', views.services, name='services'),
-    path('gallery/', views.gallery, name='gallery'),
-    path('contact/', views.contact, name='contact'),
+    path('', IndexView.as_view(), name='index'),
+    path('services/', ServicesView.as_view(), name='services'),
+    path('contact/', ContactView.as_view(), name='contact'),
+    path('gallery/', GalleryView.as_view(), name='gallery'),
+    path('gallery/upload/', PhotoUploadView.as_view(), name='photo-upload'),
+    path('gallery/<int:pk>/delete/', PhotoDeleteView.as_view(), name='photo-delete'),
+    path('gallery/<int:pk>/edit/', PhotoEditView.as_view(), name='photo-edit'),
 ]

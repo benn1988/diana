@@ -1,6 +1,6 @@
 {% load static %}
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 
 <head>
     <!-- Required meta tags -->
@@ -28,6 +28,12 @@
         href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,400,700&display=swap&subset=cyrillic"
         rel="stylesheet">
 
+    <!-- Lightbox css -->
+    {% if request.resolver_match.url_name == 'gallery' %}
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    {% endif %}
+
+
     <!--Main styles CSS-->
     <link rel="stylesheet" type="text/css" href="{% static 'site_content/styles.css' %}">
 
@@ -38,12 +44,17 @@
 
     <title>{% block title %}{% endblock title %}</title>
 
+    <!-- Script to check if user has JavaScript enabled -->
+    <script>
+            document.documentElement.classList.remove("no-js");
+    </script>
+
 
 </head>
 
 <body>
 
-    <nav class="navbar navbar-default navbar-expand-md fixed-top px-0 py-2">
+    <nav class="navbar navbar-default navbar-expand-md fixed-top p-0 py-md-2">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
             aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -108,18 +119,25 @@
         </span>
     </footer>
 
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    {% if request.resolver_match.url_name == 'gallery' %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    {% endif %}
+
+    <script src="{% static 'site_content/js/modernizr.js' %}"></script>
+    
 </body>
 
 </html>

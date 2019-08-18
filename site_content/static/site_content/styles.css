@@ -12,7 +12,6 @@ body {
 
 header {
   position: relative;
-  background-image: url("images/background_992.jpg");
   height: 75%;
   background-position: center 48px;
   background-repeat: no-repeat;
@@ -20,6 +19,14 @@ header {
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
+}
+
+.no-js header, .nowebp header {
+  background-image: url("images/background_576.jpg");
+}
+
+.webp header {
+  background-image: url("images/background_576.webp");
 }
 
 
@@ -44,6 +51,7 @@ li.nav-item a.nav-link {
   font: bold 0.8rem 'Montserrat', sans-serif;
   margin: 0 0 !important;
   padding: 10px 20px !important;
+  margin: 0.2rem 0 !important;
   color: white !important;
   border: 1px solid rgba(0, 0, 0 ,0);
   display: inline-block;
@@ -72,10 +80,18 @@ ul.navbar-nav li.nav-item:nth-child(n+2)::after {
 /* Diana staver logo */
 #logo {
   background-position: 5% 50%;
-  background-image: url("images/logo320.png");
   background-repeat: no-repeat;
   height: 100%;
 }
+
+.no-js #logo, .nowebp #logo {
+  background-image: url("images/logo320.png");
+}
+
+.webp #logo {
+  background-image: url("images/logo320.webp");
+}
+
 
 /* Phone number */
 #telephone {
@@ -93,8 +109,12 @@ ul.navbar-nav li.nav-item:nth-child(n+2)::after {
 .container .btn-dark {
   font-weight: 700;
 }
-.container .btn-dark:hover {
+
+.container .btn-dark {
   background-color: #8c796c;
+}
+.container .btn-dark:hover {
+  background-color: #231709;
 }
 
 /* Card with bio on index page */
@@ -205,16 +225,24 @@ footer svg:hover {
 /* Mobile first media queries */
 
 @media only screen and (min-width: 576px) {
-  #logo {
+  .no-js #logo, .nowebp #logo {
     background-image: url("images/logo576.png");
-    background-size: 50%;
+  }
+  
+  .webp #logo {
+    background-image: url("images/logo576.webp");
   }
 }
 
 @media only screen and (min-width: 768px) {
-  header {
-    background-image: url("images/background_1200.jpg");
+  .no-js header, .nowebp header {
+    background-image: url("images/background_992.jpg");
   }
+  
+  .webp header {
+    background-image: url("images/background_992.webp");
+  }
+
   #logo {
     background-size: 45%;
   }
@@ -244,9 +272,14 @@ footer svg:hover {
 }
 
 @media only screen and (min-width: 992px) {
-  header {
-    background-image: url("images/background_1920.jpg");
+  .no-js header, .nowebp header {
+    background-image: url("images/background_1200.jpg");
   }
+  
+  .webp header {
+    background-image: url("images/background_1200.webp");
+  }
+
   #logo {
     background-size: 40%;
   }
@@ -263,13 +296,13 @@ footer svg:hover {
 }
 
 @media only screen and (min-width: 1200px) {
-  header {
+  .no-js header, .nowebp header {
     background-image: url("images/background_1920.jpg");
   }
-  /* li.nav-item a.nav-link {
-    margin: 0 40px !important;
-    font-size: 1.1rem;
-  } */
+  
+  .webp header {
+    background-image: url("images/background_1920.webp");
+  }
   .card.index-bio p span {
     display: inline;
   }

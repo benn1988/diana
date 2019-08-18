@@ -14,4 +14,5 @@ class PostAdmin(admin.ModelAdmin):
     list_filter = ['date_posted', 'date_updated']
     search_fields = ['content', 'title']
 
+
 admin.site.register(Post, PostAdmin)

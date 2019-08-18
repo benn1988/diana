@@ -36,10 +36,11 @@ class PostDetailView(DetailView):
 class PostCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     """class view for creating new posts.
     It redirects you to the login page if user not logged in"""
+    permission_required = 'blog.can_add'
     model = Post
     fields = ['title', 'post_photo', 'content', 'category']
     template_name = 'blog/new_post.html'
-    success_message = 'New post created successful'
+    success_message = 'New post created successfully'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -63,6 +64,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixi
         if self.request.user == post.author or self.request.user.is_staff:
             return True
         return False
+
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
     """class based view for deleting any individual blog post.
