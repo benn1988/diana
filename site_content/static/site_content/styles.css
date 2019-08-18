@@ -13,7 +13,7 @@ body {
 header {
   position: relative;
   height: 75%;
-  background-position: center 48px;
+  background-position: center 40px;
   background-repeat: no-repeat;
   background-size: cover;
   -moz-background-size: cover;
@@ -236,7 +236,7 @@ footer svg:hover {
 
 @media only screen and (min-width: 768px) {
   header {
-    background-position: center 40px;
+    background-position: center 48px;
   }
 
   .no-js header, .nowebp header {
