@@ -235,6 +235,10 @@ footer svg:hover {
 }
 
 @media only screen and (min-width: 768px) {
+  header {
+    background-position: center 40px;
+  }
+
   .no-js header, .nowebp header {
     background-image: url("images/background_992.jpg");
   }
