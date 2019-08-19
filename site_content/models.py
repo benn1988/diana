@@ -4,13 +4,15 @@ from django.utils import timezone
 
 class Photocateg(models.Model):
     """Model for Gallery Photo Category"""
+    HAIRCUT = "haircut"
     HAIRCOLOR = "hair color"
     HAIRSTYLE = "hairstyle"
     MAKEUP = "makeup"
     categories = (
+        (HAIRCUT, 'Haircut'),
         (HAIRSTYLE, 'Hairstyle'),
         (MAKEUP, 'Makeup'),
-        (HAIRCOLOR, 'Hair Color')
+        (HAIRCOLOR, 'Hair Color'),
         )
     category = models.CharField(max_length=10, choices=categories, default=HAIRSTYLE)
 
