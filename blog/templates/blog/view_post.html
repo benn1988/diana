@@ -12,7 +12,7 @@
         <picture class="card-img-top">
             <source srcset="{{ post.post_photo_webp.url }}" type="image/webp">
             <img class="card-img-top" src="{{ post.post_photo.url }}" alt="{{ post.title }} image"></a>
-        </picture>>
+        </picture>
         <div class="card-body px-0 text-justify">
             <p class="card-text">{{ post.content|linebreaks }}</p>
             {% if perms.blog.add_post %}
