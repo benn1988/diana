@@ -22,7 +22,7 @@ header {
 }
 
 .no-js header, .nowebp header {
-  background-image: url("images/background_576.jpg");
+  background-image: url("images/background_992.jpg");
 }
 
 .webp header {
@@ -84,14 +84,13 @@ ul.navbar-nav li.nav-item:nth-child(n+2)::after {
   height: 100%;
 }
 
-.no-js #logo, .nowebp #logo {
-  background-image: url("images/logo320.png");
-}
-
 .webp #logo {
   background-image: url("images/logo320.webp");
 }
 
+.no-js #logo, .nowebp #logo {
+  background-image: url("images/logo320.png");
+}
 
 /* Phone number */
 #telephone {
@@ -225,12 +224,12 @@ footer svg:hover {
 /* Mobile first media queries */
 
 @media only screen and (min-width: 576px) {
-  .no-js #logo, .nowebp #logo {
-    background-image: url("images/logo576.png");
-  }
-  
   .webp #logo {
     background-image: url("images/logo576.webp");
+  }
+
+  .no-js #logo, .nowebp #logo {
+    background-image: url("images/logo576.png");
   }
 }
 
@@ -239,12 +238,12 @@ footer svg:hover {
     background-position: center 48px;
   }
 
-  .no-js header, .nowebp header {
-    background-image: url("images/background_992.jpg");
-  }
-  
   .webp header {
     background-image: url("images/background_1200.webp");
+  }
+
+  .no-js header, .nowebp header {
+    background-image: url("images/background_1200.jpg");
   }
 
   #logo {
@@ -276,12 +275,11 @@ footer svg:hover {
 }
 
 @media only screen and (min-width: 992px) {
-  .no-js header, .nowebp header {
-    background-image: url("images/background_1200.jpg");
-  }
-  
   .webp header {
     background-image: url("images/background_1920.webp");
+  }
+  .no-js header, .nowebp header {
+    background-image: url("images/background_1920.jpg");
   }
 
   #logo {
@@ -300,9 +298,9 @@ footer svg:hover {
 }
 
 @media only screen and (min-width: 1200px) {
-  .no-js header, .nowebp header {
+  /* .no-js header, .nowebp header {
     background-image: url("images/background_1920.jpg");
-  }
+  } */
   .card.index-bio p span {
     display: inline;
   }

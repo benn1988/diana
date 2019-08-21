@@ -11,12 +11,16 @@ from django.urls import reverse
 class Post(models.Model):
     """Model for Post"""
     PERSONAL = 'personal'
+    HAIRCOLOR = 'hair color'
+    HAIRCUT = 'haircut'
+    HAIRCARE = 'hair care'
     HAIRSTYLE = "hairstyle"
     MAKEUP = "makeup"
-    categories = ((PERSONAL, 'Personal'), (HAIRSTYLE, 'Hairstyle'), (MAKEUP, 'Makeup'))
+    categories = ((PERSONAL, 'Personal'), (HAIRSTYLE, 'Hairstyle'), (MAKEUP, 'Makeup'), (HAIRCOLOR, 'Hair Color'), (HAIRCUT, 'Haircut'), (HAIRCARE, 'Hair Care'))
     title = models.CharField(max_length=50)
     content = models.TextField()
     post_photo = models.ImageField(default="default-blog.jpg", upload_to='post_photo')
+    post_photo_webp = models.ImageField(default="default-blog.webp", upload_to='post_photo')
     date_posted = models.DateTimeField('Posted On', default=timezone.now)
     date_updated = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)

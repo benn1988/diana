@@ -15,11 +15,10 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146085487-1"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-146085487-1');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-146085487-1');
     </script>
 
 
@@ -55,11 +54,8 @@
 
     <title>{% block title %}{% endblock title %}</title>
 
-    <!-- Script to check if user has JavaScript enabled -->
-    <script>
-            document.documentElement.classList.remove("no-js");
-    </script>
-
+    <!-- Modernizr script -->
+    <script src="{% static 'site_content/js/modernizr.js' %}"></script>
 
 </head>
 
@@ -147,7 +143,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     {% endif %}
 
-    <script src="{% static 'site_content/js/modernizr.js' %}"></script>
     
 </body>
 

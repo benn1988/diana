@@ -9,7 +9,10 @@
             <a class="btn btn-dark" href="{% url 'category' post.category %}">{{ post.category|title }}</a>
             <p id="test">{{ post.date_posted|date:'F d, Y' }}</p>
         </div>
-        <img class="card-img-top" src="{{ post.post_photo.url }}" alt="{{ post.title }}">
+        <picture class="card-img-top m-md-3 col-md-6 mt-2 mx-auto px-0">
+            <source srcset="{{ post.post_photo_webp.url }}" type="image/webp">
+            <img class="card-img-top" src="{{ post.post_photo.url }}" alt="{{ post.title }} image"></a>
+        </picture>>
         <div class="card-body px-0 text-justify">
             <p class="card-text">{{ post.content|linebreaks }}</p>
             {% if request.user.is_staff %}
