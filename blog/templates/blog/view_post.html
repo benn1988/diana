@@ -9,13 +9,13 @@
             <a class="btn btn-dark" href="{% url 'category' post.category %}">{{ post.category|title }}</a>
             <p id="test">{{ post.date_posted|date:'F d, Y' }}</p>
         </div>
-        <picture class="card-img-top m-md-3 col-md-6 mt-2 mx-auto px-0">
+        <picture class="card-img-top">
             <source srcset="{{ post.post_photo_webp.url }}" type="image/webp">
             <img class="card-img-top" src="{{ post.post_photo.url }}" alt="{{ post.title }} image"></a>
         </picture>>
         <div class="card-body px-0 text-justify">
             <p class="card-text">{{ post.content|linebreaks }}</p>
-            {% if request.user.is_staff %}
+            {% if perms.blog.add_post %}
             <div class="row pt-3">
                 <a class="ml-auto btn btn-dark btn-small ml-5 mr-3" href="{% url 'post-update' post.id %}">Edit</a>
                 <a class="btn btn-danger btn-small" href="{% url 'post-delete' post.id %}">Delete</a>
