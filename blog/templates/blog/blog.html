@@ -11,8 +11,8 @@
                     <source srcset="{{ post.post_photo_webp.url }}" type="image/webp">
                     <img class="card-img-top" src="{{ post.post_photo.url }}" alt="{{ post.title }} image"></a>
                 </picture>
-                <p>{{ post.content | truncatewords:40 }}...</p>
-                <div class="card-body">
+                <p class="mt-md-2">{{ post.content|linebreaks|truncatewords:40 }}...</p>
+                <div class="card-body px-0">
                     <a class="btn btn-dark" href="{% url 'post-detail' post.id %}">&#139; Read More &#155;</a>
                 </div>
             </article> <!-- End Blog`s individual Post -->

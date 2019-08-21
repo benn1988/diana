@@ -21,7 +21,7 @@ header {
   -o-background-size: cover;
 }
 
-.no-js header, .nowebp header {
+.nowebp header {
   background-image: url("images/background_992.jpg");
 }
 
@@ -88,9 +88,10 @@ ul.navbar-nav li.nav-item:nth-child(n+2)::after {
   background-image: url("images/logo320.webp");
 }
 
-.no-js #logo, .nowebp #logo {
+.nowebp #logo {
   background-image: url("images/logo320.png");
 }
+
 
 /* Phone number */
 #telephone {
@@ -108,12 +109,8 @@ ul.navbar-nav li.nav-item:nth-child(n+2)::after {
 .container .btn-dark {
   font-weight: 700;
 }
-
-.container .btn-dark {
-  background-color: #8c796c;
-}
 .container .btn-dark:hover {
-  background-color: #231709;
+  background-color: #8c796c;
 }
 
 /* Card with bio on index page */
@@ -175,10 +172,7 @@ footer svg:hover {
   margin-left: 1px;
   margin-right: 1px;
 }
-.pagination a.btn-outline-dark:hover {
-  background-color: #231709;
-}
-.btn-outline-info:hover {
+.pagination a.btn-outline-dark:hover, .btn-outline-info:hover, .pagination a.disabled, .container .btn-dark {
   background-color: #231709;
 }
 .main-blog .card a {
@@ -196,16 +190,9 @@ footer svg:hover {
 .main-blog a > h4:hover {
   color: #8c796c;
 }
-.container .btn-dark {
-  background-color: #231709;
-}
 .pagination a.disabled {
   color: white;
-  background-color: #231709;
 }
-/* #test {
-  margin-bottom: 0;
-} */
 .main-blog ul li {
   border-bottom: solid 1px #231709;
   padding-bottom: 0.3rem;

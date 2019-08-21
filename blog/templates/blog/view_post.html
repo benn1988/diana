@@ -7,7 +7,7 @@
         <h2 class="card-title font-weight-bold mt-3">{{ post.title }}</h2>
         <div class="d-flex align-items-end justify-content-between my-1 mb-3">
             <a class="btn btn-dark" href="{% url 'category' post.category %}">{{ post.category|title }}</a>
-            <p id="test">{{ post.date_posted|date:'F d, Y' }}</p>
+            <p class="mb-0">{{ post.date_posted|date:'F d, Y' }}</p>
         </div>
         <picture class="card-img-top">
             <source srcset="{{ post.post_photo_webp.url }}" type="image/webp">

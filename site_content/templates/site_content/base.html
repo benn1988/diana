@@ -21,9 +21,6 @@
         gtag('config', 'UA-146085487-1');
     </script>
 
-    <!-- Modernizr script -->
-    <script src="{% static 'site_content/js/modernizr.js' %}"></script>
-
     <!-- Favicon options -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'site_content/favicon/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'site_content/favicon/favicon-32x32.png' %}">
@@ -48,11 +45,6 @@
 
     <!--Main styles CSS-->
     <link rel="stylesheet" type="text/css" href="{% static 'site_content/styles.css' %}">
-
-    <!-- Make old version of IE compatible -->
-    <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <![endif]-->
 
     <title>{% block title %}{% endblock title %}</title>
 
@@ -141,8 +133,6 @@
     {% if request.resolver_match.url_name == 'gallery' %}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     {% endif %}
-
-    
+    <script src="{% static 'site_content/js/modernizr.js' %}"></script>
 </body>
-
 </html>
