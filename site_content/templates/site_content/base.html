@@ -29,10 +29,33 @@
     <!--Main styles CSS-->
     <link rel="stylesheet" type="text/css" href="{% static 'site_content/styles.css' %}">
 
+<<<<<<< Updated upstream
     <!-- Make old version of IE compatible -->
     <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
+=======
+    {% if request.resolver_match.url_name == 'services' %}
+        <style>
+            .nowebp header {
+                background-image: url("../images/services.jpg");
+                }
+            .webp header {
+                background-image: url("../images/services.webp");
+                }
+        </style>
+    {% endif %}
+
+    {% if request.resolver_match.url_name == 'gallery' %}
+        <style>
+            @media only screen and (max-width: 768px) {
+                header {
+                    display: none;
+                }
+            }
+        </style>
+    {% endif %}
+>>>>>>> Stashed changes
 
     <title>{% block title %}{% endblock title %}</title>
 
