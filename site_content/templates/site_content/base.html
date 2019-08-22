@@ -44,10 +44,10 @@
     {% if request.resolver_match.url_name == 'services' %}
         <style>
             .nowebp header {
-                background-image: url("/images/services.jpg");
+                background-image: url("{% static 'images/services.jpg' %}");
                 }
             .webp header {
-                background-image: url("/images/services.webp");
+                background-image: url("{% static 'images/services.webp' %}");
                 }
         </style>
     {% endif %}
