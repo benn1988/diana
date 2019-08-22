@@ -20,6 +20,9 @@ header {
   -webkit-background-size: cover;
   -o-background-size: cover;
 }
+article h2 {
+  font-family: "Raleway", sans-serif;
+}
 
 .nowebp header {
   background-image: url("images/background_992.jpg");
@@ -58,6 +61,10 @@ li.nav-item a.nav-link {
   min-width: 120px;
 }
 
+.navbar-toggler:focus, .navbar-toggler:active {
+  outline: none;
+}
+
 li.nav-item a.nav-link.active, li.nav-item a.nav-link:hover {
   border: 1px solid white;
   transition: all .4s ease;
@@ -66,8 +73,8 @@ li.nav-item a.nav-link.active, li.nav-item a.nav-link:hover {
 ul.navbar-nav li.nav-item:nth-child(n+2)::after {
   display: none;
   content: "";
-  height: 16px;
-  margin-top: -20px;
+  height: 1em;
+  margin-top: -1.25em;
   width: 1px;
   background-color: white;
   transform: rotate(25deg) translateY(-50%);

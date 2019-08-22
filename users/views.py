@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from .models import Profile
 
+
 def register(request):
     """
     Register new user view. The view is displaying a blank form for a GET request.
@@ -50,6 +51,7 @@ def profile(request):
     }
 
     return render(request, 'users/profile.html', context)
+
 
 def profile_detail(request, username):
     """

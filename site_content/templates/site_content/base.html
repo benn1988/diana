@@ -46,6 +46,16 @@
     <!--Main styles CSS-->
     <link rel="stylesheet" type="text/css" href="{% static 'site_content/styles.css' %}">
 
+    {% if request.resolver_match.url_name == 'gallery' %}
+        <style>
+            @media only screen and (max-width: 768px) {
+                header {
+                    display: none;
+                }
+            }
+        </style>
+    {% endif %}
+
     <title>{% block title %}{% endblock title %}</title>
 
 </head>
