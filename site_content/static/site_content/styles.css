@@ -218,13 +218,7 @@ footer svg:hover {
 /* Mobile first media queries */
 
 @media only screen and (min-width: 576px) {
-  .webp #logo {
-    background-image: url("images/logo576.webp");
-  }
 
-  .no-js #logo, .nowebp #logo {
-    background-image: url("images/logo576.png");
-  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -236,10 +230,16 @@ footer svg:hover {
     background-image: url("images/background_1200.webp");
   }
 
-  .no-js header, .nowebp header {
+  .nowebp header {
     background-image: url("images/background_1200.jpg");
   }
+  .webp #logo {
+    background-image: url("images/logo576.webp");
+  }
 
+  .nowebp #logo {
+    background-image: url("images/logo576.png");
+  }
   #logo {
     background-size: 45%;
   }

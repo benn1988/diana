@@ -4,7 +4,7 @@
         {% for post in posts %}
             <!-- Blog`s individual Post -->
             <article class="card blog-card bg-transparent border-0 pb-3 my-4">
-                <h2 class="card-title font-weight-bold mt-3"><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+                <h2 class="card-title font-weight-bold mt-3"><a href="{% url 'post-detail' post.id %}">{{ post.title|upper }}</a></h2>
                 <p class="my-1">{{ post.date_posted|date:'F d, Y' }}</p>
                 <a href="{% url 'post-detail' post.id %}">
                 <picture class="card-img-top">

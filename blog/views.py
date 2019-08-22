@@ -36,8 +36,8 @@ class PostDetailView(DetailView):
 class PostCreateView(PermissionRequiredMixin, SuccessMessageMixin, CreateView):
     """class view for creating new posts.
     It redirects you to the login page if user not logged in"""
-    permission_required = 'blog.can_add'
     model = Post
+    permission_required = 'blog.can_add'
     fields = ['title', 'post_photo', 'post_photo_webp', 'content', 'category']
     template_name = 'blog/new_post.html'
     success_message = 'New post created successfully'
@@ -50,9 +50,9 @@ class PostCreateView(PermissionRequiredMixin, SuccessMessageMixin, CreateView):
 class PostUpdateView(PermissionRequiredMixin, SuccessMessageMixin, UpdateView):
     """class view for updating posts."""
     model = Post
-    permission_required = 'blog.can_change'
+    permission_required = 'blog.can_add'
     template_name = 'blog/new_post.html'
-    fields = ['title', 'post_photo', 'content']
+    fields = ['title', 'post_photo', 'post_photo_webp', 'content']
     success_message = 'Post updated successful'
 
 
@@ -64,8 +64,8 @@ class PostDeleteView(PermissionRequiredMixin, SuccessMessageMixin, DeleteView):
     template_name = 'blog/delete_post.html'
     success_message = 'Post deleted successful'
 
-    def test_func(self):
-        post = self.get_object()
-        if self.request.user == post.author or self.request.user.is_staff:
-            return True
-        return False
+    # def test_func(self):
+    #     post = self.get_object()
+    #     if self.request.user == post.author or self.request.user.is_staff:
+    #         return True
+    #     return False

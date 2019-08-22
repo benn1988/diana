@@ -6,7 +6,7 @@
         <a class="ml-auto btn btn-dark" href="{% url 'photo-upload' %}">Upload Photo</a>
     {% endif %}
     {% if object_list %}
-        <h1 class="row justify-content-center my-4 font-weight-bold">My Works</h1>
+        <h1 class="row justify-content-center mt-5 my-md-4 font-weight-bold">My Works</h1>
         <div class="card-columns">
         {% for photo in object_list %}
             <div class="card">
