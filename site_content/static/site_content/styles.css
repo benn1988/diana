@@ -1,9 +1,9 @@
-html, body {
+html,
+body {
   height: 100%;
   background-color: #f0f0f0;
 }
 
-/* Cover background image on body element */
 body {
   font-family: "Roboto", sans-serif;
   line-height: 1.4rem;
@@ -20,16 +20,26 @@ header {
   -webkit-background-size: cover;
   -o-background-size: cover;
 }
+
 article h2 {
   font-family: "Raleway", sans-serif;
 }
 
-.nowebp header {
-  background-image: url("images/background_992.jpg");
+.nowebp header, .no-js header {
+  background-image: url("images/background768.jpg");
 }
 
 .webp header {
-  background-image: url("images/background_992.webp");
+  background-image: url("images/background768.jpg");
+}
+
+
+.nowebp header.services, .no-js header.services {
+  background-image: url("images/services.jpg");
+}
+
+.webp header.services {
+  background-image: url("images/services.webp");
 }
 
 
@@ -56,16 +66,18 @@ li.nav-item a.nav-link {
   padding: 10px 20px !important;
   margin: 0.2rem 0 !important;
   color: white !important;
-  border: 1px solid rgba(0, 0, 0 ,0);
+  border: 1px solid rgba(0, 0, 0, 0);
   display: inline-block;
   min-width: 120px;
 }
 
-.navbar-toggler:focus, .navbar-toggler:active {
+.navbar-toggler:focus,
+.navbar-toggler:active {
   outline: none;
 }
 
-li.nav-item a.nav-link.active, li.nav-item a.nav-link:hover {
+li.nav-item a.nav-link.active,
+li.nav-item a.nav-link:hover {
   border: 1px solid white;
   transition: all .4s ease;
 }
@@ -85,37 +97,29 @@ ul.navbar-nav li.nav-item:nth-child(n+2)::after {
 }
 
 /* Diana staver logo */
-#logo {
-  background-position: 5% 50%;
-  background-repeat: no-repeat;
-  height: 100%;
+header img {
+  top: 50%;
 }
-
-.webp #logo {
-  background-image: url("images/logo320.webp");
-}
-
-.nowebp #logo {
-  background-image: url("images/logo320.png");
-}
-
 
 /* Phone number */
-#telephone {
-  position: absolute;
+header a {
   text-decoration: none !important;
   font-family: "Raleway", sans-serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #231709;
-  text-shadow: 1px 1px 1px white;
+  text-shadow: 2px 2px white;
   top: 60%;
-  left: 10%;
+}
+
+header a p {
+  margin-left: 5vw;
 }
 
 .container .btn-dark {
   font-weight: 700;
 }
+
 .container .btn-dark:hover {
   background-color: #8c796c;
 }
@@ -147,154 +151,131 @@ ul.navbar-nav li.nav-item:nth-child(n+2)::after {
   max-width: 334px;
 }
 
-
 /* Footer CSS */
 footer {
   background-color: #231709 !important;
 }
+
 footer svg {
   height: 24px;
   width: 24px;
 }
+
 footer svg:hover {
   transition: all .4s ease;
   transform: scale(1.2, 1.2);
 }
 
-
 /* SERVICES PAGE */
-
-.card-deck.services h2 {
+.card-deck.services-card h2 {
   border-bottom: 2px solid #5D5D5D;
 }
 
-
 /* BLOG */
-
 .blog-card {
   border-bottom: solid 1px #231709 !important;
   border-radius: 0;
 }
+
 .pagination a.btn-outline-dark {
   margin-left: 1px;
   margin-right: 1px;
 }
-.pagination a.btn-outline-dark:hover, .btn-outline-info:hover, .pagination a.disabled, .container .btn-dark {
+
+.pagination a.btn-outline-dark:hover,
+.btn-outline-info:hover,
+.pagination a.disabled,
+.container .btn-dark {
   background-color: #231709;
 }
+
 .main-blog .card a {
   text-decoration: none;
 }
-.main-blog .card h2 > a {
+
+.main-blog .card h2>a, .main-blog a>h4 {
   color: #231709;
 }
-.main-blog .card h2 > a:hover {
+
+.main-blog .card h2>a:hover, .main-blog a>h4:hover,
+.main-blog ul li a:hover {
   color: #8c796c;
 }
-.main-blog a > h4 {
-  color: #231709;
-}
-.main-blog a > h4:hover {
-  color: #8c796c;
-}
+
 .pagination a.disabled {
   color: white;
 }
+
 .main-blog ul li {
   border-bottom: solid 1px #231709;
   padding-bottom: 0.3rem;
   margin-bottom: 0.3rem;
 }
+
 .main-blog ul li a {
   font-size: 1.2rem;
   font-weight: 700;
   color: #231709;
 }
-.main-blog ul li a:hover {
-  color: #8c796c;
-}
 
-
-/* Mobile first media queries */
-
-@media only screen and (min-width: 576px) {
-
-}
+/* Media queries */
+@media only screen and (min-width: 576px) {}
 
 @media only screen and (min-width: 768px) {
   header {
     background-position: center 48px;
   }
 
-  .webp header {
-    background-image: url("images/background_1200.webp");
+  .nowebp header, .no-js header {
+    background-image: url("images/background1200.jpg");
   }
 
-  .nowebp header {
-    background-image: url("images/background_1200.jpg");
-  }
-  .webp #logo {
-    background-image: url("images/logo576.webp");
-  }
-
-  .nowebp #logo {
-    background-image: url("images/logo576.png");
-  }
-  #logo {
-    background-size: 45%;
-  }
-  #telephone {
-    font-size: 2rem;
-    top: 75%;
-    left: 10%;
-  }
   li.nav-item a.nav-link {
     margin: 0 14px !important;
     padding: 10px 14px !important;
     text-align: center;
   }
+
   .card.index-bio {
     -ms-flexbox-direction: row;
     -moz-flex-direction: row;
     -webkit-flex-direction: row;
     flex-direction: row;
   }
+
   ul.navbar-nav li.nav-item:nth-child(n+2)::after {
     display: block;
   }
 
-  .card-deck.services h4 {
+  .card-deck.services-card h4 {
     margin-left: 0.5rem !important;
   }
 }
 
 @media only screen and (min-width: 992px) {
   .webp header {
-    background-image: url("images/background_1920.webp");
-  }
-  .no-js header, .nowebp header {
-    background-image: url("images/background_1920.jpg");
+    background-image: url("images/background1920.webp");
   }
 
-  #logo {
-    background-size: 40%;
+  .nowebp header, .no-js header {
+    background-image: url("images/background1920.jpg");
   }
+
   li.nav-item a.nav-link {
     margin: 0 33px !important;
     font-size: 1rem;
   }
+
   .card.index-bio a.btn {
     display: inline-block;
   }
+
   .card.index-bio {
     max-width: 70%;
   }
 }
 
 @media only screen and (min-width: 1200px) {
-  /* .no-js header, .nowebp header {
-    background-image: url("images/background_1920.jpg");
-  } */
   .card.index-bio p span {
     display: inline;
   }
