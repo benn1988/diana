@@ -10,49 +10,9 @@ body {
   color: #231709;
 }
 
-header {
-  position: relative;
-  height: 75%;
-  background-position: center 40px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  -o-background-size: cover;
-}
-
-article h2 {
-  font-family: "Raleway", sans-serif;
-}
-
-.nowebp header, .no-js header {
-  background-image: url("images/background768.jpg");
-}
-
-.webp header {
-  background-image: url("images/background768.jpg");
-}
-
-
-.nowebp header.services, .no-js header.services {
-  background-image: url("images/services.jpg");
-}
-
-.webp header.services {
-  background-image: url("images/services.webp");
-}
-
-
 /* Background color on main element */
 main {
   background-color: #f0f0f0;
-}
-
-/* Sign-In page in center and with max width */
-.form-signin {
-  max-width: 50%;
-  padding: 15px;
-  margin: auto;
 }
 
 /* Navigation Menu CSS */
@@ -96,32 +56,49 @@ ul.navbar-nav li.nav-item:nth-child(n+2)::after {
   background-image: url("images/menu.svg");
 }
 
+/* HEADER CSS */
+header {
+  position: relative;
+  height: 75%;
+  background-position: center 40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+}
+
+.nowebp header, .no-js header {
+  background-image: url("images/background1200.jpg");
+}
+
+.webp header {
+  background-image: url("images/background1200.jpg");
+}
+
+
 /* Diana staver logo */
 header img {
-  top: 50%;
+  margin-top: 40vh;
 }
 
 /* Phone number */
 header a {
+  max-width: 576px !important;
   text-decoration: none !important;
   font-family: "Raleway", sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #231709;
   text-shadow: 2px 2px white;
-  top: 60%;
+  top: 1rem;
+}
+header a:hover {
+  color: #8c796c;
 }
 
 header a p {
-  margin-left: 5vw;
-}
-
-.container .btn-dark {
-  font-weight: 700;
-}
-
-.container .btn-dark:hover {
-  background-color: #8c796c;
+  margin-left: 7vw;
 }
 
 /* Card with bio on index page */
@@ -139,10 +116,6 @@ header a p {
 }
 
 .card.index-bio p span {
-  display: none;
-}
-
-.card.index-bio a.btn {
   display: none;
 }
 
@@ -166,12 +139,25 @@ footer svg:hover {
   transform: scale(1.2, 1.2);
 }
 
+/* DARK BUTTONS CSS */
+.container .btn-dark {
+  font-weight: 700;
+}
+
+.container .btn-dark:hover {
+  background-color: #8c796c;
+}
+
 /* SERVICES PAGE */
 .card-deck.services-card h2 {
   border-bottom: 2px solid #5D5D5D;
 }
 
 /* BLOG */
+article h2 {
+  font-family: "Raleway", sans-serif;
+}
+
 .blog-card {
   border-bottom: solid 1px #231709 !important;
   border-radius: 0;
@@ -218,12 +204,32 @@ footer svg:hover {
   color: #231709;
 }
 
+/* Sign-In page in center and with max width */
+.form-signin {
+  max-width: 768px;
+  padding: 15px;
+  margin: auto;
+}
+
 /* Media queries */
-@media only screen and (min-width: 576px) {}
+@media only screen and (min-width: 576px) {
+  header img {
+    margin-top: 30vh;
+  }
+  header a {
+    font-size: 1.8rem;
+  }
+}
 
 @media only screen and (min-width: 768px) {
+  header a {
+    font-size: 2rem;
+  }
   header {
     background-position: center 48px;
+  }
+  .webp header {
+    background-image: url("images/background1200.webp");
   }
 
   .nowebp header, .no-js header {
@@ -253,21 +259,10 @@ footer svg:hover {
 }
 
 @media only screen and (min-width: 992px) {
-  .webp header {
-    background-image: url("images/background1920.webp");
-  }
-
-  .nowebp header, .no-js header {
-    background-image: url("images/background1920.jpg");
-  }
 
   li.nav-item a.nav-link {
     margin: 0 33px !important;
     font-size: 1rem;
-  }
-
-  .card.index-bio a.btn {
-    display: inline-block;
   }
 
   .card.index-bio {
@@ -276,6 +271,13 @@ footer svg:hover {
 }
 
 @media only screen and (min-width: 1200px) {
+  .webp header {
+    background-image: url("images/background1920.webp");
+  }
+
+  .nowebp header, .no-js header {
+    background-image: url("images/background1920.jpg");
+  }
   .card.index-bio p span {
     display: inline;
   }
