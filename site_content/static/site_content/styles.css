@@ -78,27 +78,26 @@ header {
 
 
 /* Diana staver logo */
-header img {
-  margin-top: 40vh;
+.intro {
+  position: absolute;
+  bottom: 27%;
 }
 
 /* Phone number */
-header a {
-  max-width: 576px !important;
+.intro p a {
   text-decoration: none !important;
   font-family: "Raleway", sans-serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #231709;
   text-shadow: 2px 2px white;
-  top: 1rem;
 }
-header a:hover {
+.intro a:hover {
   color: #8c796c;
 }
 
-header a p {
-  margin-left: 7vw;
+.intro p {
+  margin: 1rem 0 0 10%;
 }
 
 /* Card with bio on index page */
@@ -213,18 +212,9 @@ article h2 {
 
 /* Media queries */
 @media only screen and (min-width: 576px) {
-  header img {
-    margin-top: 30vh;
-  }
-  header a {
-    font-size: 1.8rem;
-  }
 }
 
 @media only screen and (min-width: 768px) {
-  header a {
-    font-size: 2rem;
-  }
   header {
     background-position: center 48px;
   }

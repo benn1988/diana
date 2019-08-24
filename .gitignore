@@ -124,3 +124,6 @@ dmypy.json
 .pyre/
 *.json
 *.pyc
+
+# Media folder
+media/

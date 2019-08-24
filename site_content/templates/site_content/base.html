@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Diana Staver is a hairstyle specialist with more than 7 years of experience">
+    <meta name="description" content="Diana Staver is a hair and makeup artist with more than 7 years of experience">
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -86,10 +86,16 @@
         </div>
     </nav>
     <header class="{% if request.resolver_match.url_name == 'index' %}h-100{% endif %}{% if request.resolver_match.url_name == 'gallery' %}d-none d-sm-block{% endif %}">
-        <img class="img-fluid col-10 col-sm-6 col-md-7" src="{% static 'site_content/images/logo2100.png' %}"
-        srcset="{% static 'site_content/images/logo600.png' %} 600w, {% static 'site_content/images/logo1100.png' %} 1100w, {% static 'site_content/images/logo2100.png' %} 2100w">
-        <a class="col-6" href="tel:+16196487030"><p>619-648-7030</p></a>
     </header>
+    <div class="intro">
+        <a href="{% url 'index' %}">
+            <img class="img-fluid col-11 col-sm-7 col-md-7" src="{% static 'site_content/images/logo2100.png' %}"
+                srcset="{% static 'site_content/images/logo600.png' %} 600w,
+                {% static 'site_content/images/logo1100.png' %} 1100w,
+                {% static 'site_content/images/logo2100.png' %} 2100w">
+        </a>
+        <p><a href="tel:+16196487030">619-648-7030</a></p>
+    </div>
     <!-- Begin page content -->
     <main>
         {% if messages %}
