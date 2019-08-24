@@ -149,8 +149,14 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
+
+AWS_ACCESS_KEY_ID = 'AKIAXY3QQNCM64FBM5WD'
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_STORAGE_BUCKET_NAME = "diana-staver"
+SECRET_KEY = "d66fca617d906dce9e3a85f8fcaf36d5ffa2d2c7ddb46b8d"
+DEBUG = True
