@@ -1,7 +1,7 @@
 {% extends 'site_content/base.html' %}
 {% block title %}Gallery{% endblock title %}
 {% block content %}
-    <div class="container">
+    <div class="container gallery">
     {% if perms.site_content.add_photo %}
         <a class="ml-auto btn btn-dark" href="{% url 'photo-upload' %}">Upload Photo</a>
     {% endif %}

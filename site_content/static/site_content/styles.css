@@ -120,7 +120,7 @@ header {
 
 .card.index-bio img {
   max-height: 491px;
-  max-width: 334px;
+  max-width: 350px;
 }
 
 /* Footer CSS */
@@ -150,6 +150,14 @@ footer svg:hover {
 /* SERVICES PAGE */
 .card-deck.services-card h2 {
   border-bottom: 2px solid #5D5D5D;
+}
+
+/* GALLERY CSS */
+.gallery .card img, .blog-card img {
+  transition: all 0.2s ease-out;
+}
+.gallery .card img:hover, .blog-card img:hover {
+  transform: scale(1.01, 1.01)
 }
 
 /* BLOG */
@@ -210,7 +218,41 @@ article h2 {
   margin: auto;
 }
 
+/* CONTACT PAGE CSS */
+.container .address {
+  line-height: 2.5rem;
+  font-size: 1.7rem;
+}
+.address a {
+  color: #231709;
+  text-decoration: none !important;
+}
+.address a[type="button"] {
+  color: white !important;
+}
+
+.address a:hover {
+  color: #8c796c;
+}
+.address ul li {
+  list-style: none;
+  font-size: 1.4rem;
+}
+.address p {
+  font-size: 2rem;
+  text-shadow: 4px 4px 5px #8c796c;
+}
+
 /* Media queries */
+@media only screen and (min-width:320px) and (max-width: 400px) {
+  .card.index-bio img {
+    max-width: 320px;
+  }
+  .container .address {
+    font-size: 1.4rem;
+  }
+}
+
 @media only screen and (min-width: 576px) {
 }
 
