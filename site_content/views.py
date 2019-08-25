@@ -37,7 +37,7 @@ class PhotoUploadView(PermissionRequiredMixin, SuccessMessageMixin, CreateView):
 class PhotoDeleteView(PermissionRequiredMixin, SuccessMessageMixin, DeleteView):
     """class based view for deleting gallery photo. User needs delete perm"""
     model = Photo
-    permission_required = 'site_content.add_photo'
+    permission_required = 'site_content.delete_photo'
     template_name = 'site_content/photo_delete.html'
     success_message = 'Photo deleted successfully'
     success_url = '/gallery/'
@@ -45,8 +45,8 @@ class PhotoDeleteView(PermissionRequiredMixin, SuccessMessageMixin, DeleteView):
 class PhotoEditView(PermissionRequiredMixin, SuccessMessageMixin, UpdateView):
     """View for editing gallery photos"""
     model = Photo
-    permission_required = 'site_content.add_photo'
-    fields = ['title', 'photo', 'categories']
+    permission_required = 'site_content.delete_photo'
+    fields = ['title', 'photo_full', 'photo_thumbnail', 'categories']
     template_name = 'site_content/photo_upload.html'
     success_message = 'Photo edited succesfully'
     success_url = '/gallery/'
