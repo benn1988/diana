@@ -73,7 +73,7 @@ header {
 }
 
 .webp header {
-  background-image: url("images/background1200.jpg");
+  background-image: url("images/background1200.webp");
 }
 
 
@@ -90,7 +90,7 @@ header {
   font-size: 2rem;
   font-weight: 700;
   color: #231709;
-  text-shadow: 2px 2px white;
+  text-shadow: 2px 2px rgba(255, 255, 255, 0.5);
 }
 .intro a:hover {
   color: #8c796c;
@@ -257,6 +257,13 @@ article h2 {
 }
 
 @media only screen and (min-width: 768px) {
+  .intro p a {
+    font-size: 2.2rem;
+  }
+  
+  .intro p {
+    margin: 2rem 0 0 7%;
+  }
   header {
     background-position: center 48px;
   }
@@ -291,6 +298,10 @@ article h2 {
 }
 
 @media only screen and (min-width: 992px) {
+  
+  .intro p {
+    margin: 2rem 0 0 5%;
+  }
 
   li.nav-item a.nav-link {
     margin: 0 33px !important;
