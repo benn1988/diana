@@ -1,4 +1,6 @@
 {% extends 'blog/blog_base.html' %}
+{% load cloudinary %}
+
 {% block blogmain %}
     {% if posts %}
         {% for post in posts %}
@@ -7,10 +9,7 @@
                 <h2 class="card-title font-weight-bold mt-3"><a href="{% url 'post-detail' post.id %}">{{ post.title|upper }}</a></h2>
                 <p class="my-1">{{ post.date_posted|date:'F d, Y' }}</p>
                 <a href="{% url 'post-detail' post.id %}">
-                    <picture class="card-img-top">
-                        <source srcset="{{ post.post_photo_webp.url }}" type="image/webp">
-                        <img class="card-img-top" src="{{ post.post_photo.url }}" alt="{{ post.title }} image">
-                    </picture>
+                    <img class="card-img-top" src="{{ post.post_photo.url }}" alt="{{ post.title }} image">
                 </a>
                 <p class="mt-md-2">{{ post.content|linebreaks|truncatewords:40 }}...</p>
                 <div class="card-body px-0">

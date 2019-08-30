@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import django_heroku
+import cloudinary
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -43,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'storages',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -136,21 +137,21 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_URL = 'login'
 
-LOGIN_REDIRECT_URL = 'index'
-LOGOUT_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = 'blog'
+LOGOUT_REDIRECT_URL = 'blog'
 
 SITE_ID = 1
 
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
-
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
-
-
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
+
+
+SECRET_KEY = "d66fca617d906dce9e3a85f8fcaf36d5ffa2d2c7ddb46b8d"
+DEBUG = True
+cloudinary.config(
+  cloud_name = "diana-staver",
+  api_key = "281719581588629",
+  api_secret = "Yvxao9CdAu7CPSyr4JsjA3gBclk",
+  private_cdn = False,
+  secure = True
+)

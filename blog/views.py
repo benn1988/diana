@@ -38,7 +38,7 @@ class PostCreateView(PermissionRequiredMixin, SuccessMessageMixin, CreateView):
     It redirects you to the login page if user not logged in"""
     model = Post
     permission_required = 'blog.can_add'
-    fields = ['title', 'post_photo', 'post_photo_webp', 'content', 'category']
+    fields = ['title', 'post_photo', 'content', 'category']
     template_name = 'blog/new_post.html'
     success_message = 'New post created successfully'
 
@@ -52,7 +52,7 @@ class PostUpdateView(PermissionRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Post
     permission_required = 'blog.can_add'
     template_name = 'blog/new_post.html'
-    fields = ['title', 'post_photo', 'post_photo_webp', 'content']
+    fields = ['title', 'post_photo', 'content']
     success_message = 'Post updated successful'
 
 

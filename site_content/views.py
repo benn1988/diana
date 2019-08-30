@@ -29,7 +29,7 @@ class PhotoUploadView(PermissionRequiredMixin, SuccessMessageMixin, CreateView):
     It redirects to the login page if user does not have add permission"""
     model = Photo
     permission_required = 'site_content.add_photo'
-    fields = ['title', 'photo_full', 'photo_thumbnail', 'categories']
+    fields = ['title', 'photo_full', 'photo_thumb', 'categories']
     template_name = 'site_content/photo_upload.html'
     success_message = 'New photo uploaded successfully'
     success_url = '/gallery/'
@@ -46,7 +46,7 @@ class PhotoEditView(PermissionRequiredMixin, SuccessMessageMixin, UpdateView):
     """View for editing gallery photos"""
     model = Photo
     permission_required = 'site_content.delete_photo'
-    fields = ['title', 'photo_full', 'photo_thumbnail', 'categories']
+    fields = ['title', 'photo_full', 'photo_thumb', 'categories']
     template_name = 'site_content/photo_upload.html'
     success_message = 'Photo edited succesfully'
     success_url = '/gallery/'

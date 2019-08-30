@@ -6,6 +6,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
+from cloudinary.models import CloudinaryField
 
 
 class Post(models.Model):
@@ -19,8 +20,7 @@ class Post(models.Model):
     categories = ((PERSONAL, 'Personal'), (HAIRSTYLE, 'Hairstyle'), (MAKEUP, 'Makeup'), (HAIRCOLOR, 'Hair Color'), (HAIRCUT, 'Haircut'), (HAIRCARE, 'Hair Care'))
     title = models.CharField(max_length=50)
     content = models.TextField()
-    post_photo = models.ImageField(default="default-blog.jpg", upload_to='post_photo')
-    post_photo_webp = models.ImageField(default="default-blog.webp", upload_to='post_photo')
+    post_photo = CloudinaryField('image')
     date_posted = models.DateTimeField('Posted On', default=timezone.now)
     date_updated = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)

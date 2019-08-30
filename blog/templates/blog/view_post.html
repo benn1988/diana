@@ -9,10 +9,7 @@
             <a class="btn btn-dark" href="{% url 'category' post.category %}">{{ post.category|title }}</a>
             <p class="mb-0">{{ post.date_posted|date:'F d, Y' }}</p>
         </div>
-        <picture class="card-img-top">
-            <source srcset="{{ post.post_photo_webp.url }}" type="image/webp">
-            <img class="card-img-top" src="{{ post.post_photo.url }}" alt="{{ post.title }} image"></a>
-        </picture>
+        <img class="card-img-top" src="{{ post.post_photo.url }}" alt="{{ post.title }} image"></a>
         <div class="card-body px-0 text-justify">
             <p class="card-text">{{ post.content|linebreaks }}</p>
             {% if perms.blog.add_post %}

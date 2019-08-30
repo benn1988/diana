@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from cloudinary.models import CloudinaryField
 
 
 class Photocateg(models.Model):
@@ -27,8 +28,8 @@ class Photocateg(models.Model):
 class Photo(models.Model):
     """Model for Gallery Photo"""
     title = models.CharField(max_length=50)
-    photo_full = models.ImageField(default="default-blog.jpg", upload_to='gallery/')
-    photo_thumbnail = models.ImageField(default="default-blog.jpg", upload_to='gallery/thumbnails')
+    photo_full = CloudinaryField('image', folder="gallery")
+    photo_thumb = CloudinaryField('image', folder="gallery")
     date_uploaded = models.DateTimeField('Posted On', default=timezone.now)
     categories = models.ForeignKey(Photocateg, on_delete=models.CASCADE)
 
