@@ -144,14 +144,3 @@ SITE_ID = 1
 
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
-
-
-SECRET_KEY = "d66fca617d906dce9e3a85f8fcaf36d5ffa2d2c7ddb46b8d"
-DEBUG = True
-cloudinary.config(
-  cloud_name = "diana-staver",
-  api_key = "281719581588629",
-  api_secret = "Yvxao9CdAu7CPSyr4JsjA3gBclk",
-  private_cdn = False,
-  secure = True
-)
