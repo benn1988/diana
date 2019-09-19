@@ -57,21 +57,23 @@ ul.navbar-nav li.nav-item:nth-child(n+2)::after {
 }
 
 /* HEADER CSS */
-.nowebp header, .no-js header { 
-  background: url("images/background1200.jpg") no-repeat center 40px;
-}
-
-.webp header {
-  background: url("images/background1200.webp") no-repeat center 40px;
-}
-
 header {
   position: relative;
   height: 75%;
+  background-position: center 40px;
+  background-repeat: no-repeat;
   background-size: cover;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
+}
+
+.nowebp header, .no-js header {
+  background-image: url("images/background1200.jpg");
+}
+
+.webp header {
+  background-image: url("images/background1200.webp");
 }
 
 
