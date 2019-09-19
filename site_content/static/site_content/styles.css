@@ -62,7 +62,7 @@ ul.navbar-nav li.nav-item:nth-child(n+2)::after {
 }
 
 .webp header {
-  background: url("images/background1200.web") no-repeat center 40px;
+  background: url("images/background1200.webp") no-repeat center 40px;
 }
 
 header {
