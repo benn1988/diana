@@ -6,20 +6,11 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Diana Staver is a hair and makeup artist with more than 7 years of experience">
+    {% block description %}{% endblock description %}
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Diana Staver PWA">
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146085487-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-146085487-1');
-    </script> -->
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148790300-1">
@@ -57,7 +48,9 @@
         rel="stylesheet">
 
     <!-- Fancybox CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+    {% if request.resolver_match.url_name == 'gallery' %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+    {% endif %}
         
 
     <!--Main styles CSS-->
@@ -65,6 +58,34 @@
 
     <title>{% block title %}{% endblock title %}</title>
 
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+
+    <script type="application/ld+json"> {
+        "@context" : "http://schema.org",
+        "@type" : "HairSalon",
+        "image" : "https://drive.google.com/file/d/1KH97qBr23aQzeWFSXIMk7C9CuECuAO_5/view",
+        "hasMap": "https://maps.google.com/maps?cid=7157975395148379122",
+        "name":"Diana Staver Hair & Makeup Artist",
+        "url":"https://www.dianastaver.com",
+        "email":"dianafleur1986@gmail.com",
+        "telephone":"+16196487030",
+        "openingHours": [
+        "Mo-Fr 09:30-19:00", "Sa-Su 08:00-18:00"],
+        "paymentAccepted":"Cash, Visa, Master Card, Discover, Amex, ApplePay, AndroidPay",
+        "priceRange" : "$$",
+        "sameAs": [
+            "https://www.facebook.com/dianastaverhair",
+            "https://www.instagram.com/diana.staver/"
+          ],
+        "address" : {
+        "@type": "PostalAddress",
+        "addressLocality": "San Diego",
+        "addressRegion": "California",
+        "postalCode": "91941",
+        "streetAddress": "1281 Ninth Ave Suite 143" }
+        } </script>
 </head>
 
 <body>
@@ -126,13 +147,13 @@
         <span class="row text-white justify-content-center"><small>Copyright &copy; Dan Staver
                 {% now "Y" %}</small></span>
         <span class="row justify-content-center pt-2 pb-3">
-            <a href="https://www.facebook.com/dianastaverhair" aria-label="Connect on facebook"><svg class="mr-4"
+            <a href="https://www.facebook.com/dianastaverhair" target="_blank" aria-label="Connect on facebook"><svg class="mr-4"
                     role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <title>Add me on Facebook</title>
                     <path fill="#FFFFFF"
                         d="M23.9981 11.9991C23.9981 5.37216 18.626 0 11.9991 0C5.37216 0 0 5.37216 0 11.9991C0 17.9882 4.38789 22.9522 10.1242 23.8524V15.4676H7.07758V11.9991H10.1242V9.35553C10.1242 6.34826 11.9156 4.68714 14.6564 4.68714C15.9692 4.68714 17.3424 4.92149 17.3424 4.92149V7.87439H15.8294C14.3388 7.87439 13.8739 8.79933 13.8739 9.74824V11.9991H17.2018L16.6698 15.4676H13.8739V23.8524C19.6103 22.9522 23.9981 17.9882 23.9981 11.9991Z" />
                 </svg></a>
-            <a href="https://www.instagram.com/diana.staver/" aria-label="Follow me on Instagram"><svg role="img"
+            <a href="https://www.instagram.com/diana.staver/" target="_blank" aria-label="Follow me on Instagram"><svg role="img"
                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <title>Follow on Instagram</title>
                     <path fill="#FFFFFF"
