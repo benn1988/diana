@@ -7,14 +7,14 @@
         {% for post in posts %}
             <!-- Blog`s individual Post -->
             <article class="card blog-card bg-transparent border-0 pb-3 my-4">
-                <h2 class="card-title font-weight-bold mt-3"><a href="{% url 'post-detail' post.id %}">{{ post.title|upper }}</a></h2>
+                <h2 class="card-title font-weight-bold mt-3"><a href="{% url 'post-detail' post.slug %}">{{ post.title|upper }}</a></h2>
                 <p class="my-1">{{ post.date_posted|date:'F d, Y' }}</p>
-                <a href="{% url 'post-detail' post.id %}">
+                <a href="{% url 'post-detail' post.slug %}">
                     <img class="card-img-top" src="{{ post.post_photo.url }}" alt="{{ post.title }} image">
                 </a>
                 <p class="mt-md-2">{{ post.content|linebreaks|truncatewords:40 }}...</p>
                 <div class="card-body px-0">
-                    <a class="btn btn-dark" href="{% url 'post-detail' post.id %}">&#139; Read More &#155;</a>
+                    <a class="btn btn-dark" href="{% url 'post-detail' post.slug %}">&#139; Read More &#155;</a>
                 </div>
             </article> <!-- End Blog`s individual Post -->
         {% endfor %}
