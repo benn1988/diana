@@ -63,9 +63,3 @@ class PostDeleteView(PermissionRequiredMixin, SuccessMessageMixin, DeleteView):
     success_url = '/blog/'
     template_name = 'blog/delete_post.html'
     success_message = 'Post deleted successful'
-
-    # def test_func(self):
-    #     post = self.get_object()
-    #     if self.request.user == post.author or self.request.user.is_staff:
-    #         return True
-    #     return False
