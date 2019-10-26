@@ -243,6 +243,17 @@ article h2 {
   text-shadow: 4px 4px 5px #8c796c;
 }
 
+/* MAP CSS */
+
+div.map img {
+  margin: 1rem 0;
+}
+
+div.map p {
+  border: 1px solid #231709;
+  text-shadow: 1px 1px 3px #8c796c;
+}
+
 /* Media queries */
 @media only screen and (min-width:320px) and (max-width: 400px) {
   .card.index-bio img {

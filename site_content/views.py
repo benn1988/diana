@@ -17,6 +17,9 @@ class ServicesView(TemplateView):
 
 class ContactView(TemplateView):
     template_name = 'site_content/contact.html'
+    
+class MapView(TemplateView):
+    template_name = 'site_content/map.html'
 
 class GalleryView(ListView):
     model = Photo
