@@ -1,28 +1,49 @@
 {% extends 'site_content/base.html' %}
 {% load static %}
-{% block description %}<meta name="description" content="Diana Staver is a hair and makeup artist with many years of experience. Her motto: Every client must leave with a smile on their face.">{% endblock description %}
+{% block description %}
+<meta name="description"
+    content="Diana Staver is a hair and makeup artist with many years of experience. Her motto: Every client must leave with a smile on their face.">
+{% endblock description %}
 {% block title %}Diana Staver Hair & Makeup Artist in San Diego, CA{% endblock title %}
 {% block content %}
-<div class="container p-0">
-    <div class="card index-bio mx-auto text-center">
-        <picture>
-            <source srcset="{% static 'site_content/images/dianastaver.webp' %}" type="image/webp">
-            <img class="card-img-top m-0 m-md-3 col-md-6 mt-2 mx-auto px-0"
-                src="{% static 'site_content/images/dianastaver.jpg' %}" alt="Diana Staver`s personal photo">
-        </picture>
-        <div class="card-body col-md-6">
-            <h3 class="card-title text-center font-weight-bold">About myself</h3>
-            <p class="card-text text-justify">
-                Hi there, my name is Diana Staver.<br>
-                Since the age of 7 I always loved playing with hair. When I was 15 I did the hair for a school presentation
-                 for a couple of girls, long before I had any specialty courses taken. I started an actual career in 2009 after I took a 
-                 hairstylist course, and begun working soon after. Now, years after, I still strive to improve myself, by taking 
-                 various courses related to modern hair cutting, coloring, styling, braiding techniques, as well as makeup.<br>
-                 <span>My goal is to have every single customer leave with a smile on their face, while feeling beautiful both inside and out, 
-                 and I do that by carefully listening to all of the client`s needs and desires.</span>
-            </p>
-            <a href="{% url 'gallery' %}" class="btn btn-dark">Check my works</a>
-        </div>
-    </div>
-</div>
+<div class="container-fluid p-0">
+    <div class="row m-0">
+        <div class="col-sm-4 p-0">
+            <picture>
+                <source srcset="https://res.cloudinary.com/diana-staver/image/upload/v1575954949/ouyp6a115gn5vrrfsh0i.webp"
+                    type="image/webp">
+                <img class="img-fluid" src="https://res.cloudinary.com/diana-staver/image/upload/v1575954948/ltbxkzz5x4avcqkjzvdi.jpg"
+                    alt="Diana Staver`s personal photo left">
+            </picture>
+        </div> <!-- End of div col -->
+
+        <div class="col-sm-4 p-0">
+                <picture>
+                    <source
+                        srcset="https://res.cloudinary.com/diana-staver/image/upload/v1575954948/zo2afgg1jp4re9rkcna9.webp"
+                        type="image/webp">
+                    <img class="img-fluid" src="https://res.cloudinary.com/diana-staver/image/upload/v1575954948/z8hxsusnylht9efu5oh6.jpg"
+                        alt="Diana Staver`s personal photo left">
+                </picture>
+        </div> <!-- End of div col -->
+
+        <div class="col-sm-4 p-0">
+                <picture>
+                    <source srcset="https://res.cloudinary.com/diana-staver/image/upload/v1575954949/e8waiotrghjy36werx69.webp"
+                        type="image/webp">
+                    <img class="img-fluid" src="https://res.cloudinary.com/diana-staver/image/upload/v1575954949/e2atmucy0y5hh5nzu8jp.jpg"
+                        alt="Diana Staver`s personal photo left">
+                </picture>
+        </div> <!-- End of div col -->
+    </div> <!-- End of div row -->
+    <div class="row m-0 justify-content-center index-bio text-light">
+        <h5 class="text-justify w-75 py-4">Hi there, my name is Diana Staver.
+            Since the age of 7 I always loved playing with hair. When I was 15 I did the hair for a school presentation for a couple of girls, long before I had any specialty courses taken. I started an actual career in 2009 after I took a hairstylist course, and begun working soon after. Now, years after, I still strive to improve myself, by taking various courses related to modern hair cutting, coloring, styling, braiding techniques, as well as makeup.
+            My goal is to have every single customer leave with a smile on their face, while feeling beautiful both inside and out, and I do that by carefully listening to all of the client`s needs and desires.</h5>
+    </div> <!-- End of div row -->
+    <picture>
+        <source srcset="https://res.cloudinary.com/diana-staver/image/upload/v1576127719/rvjhreblxu825opzbwb2.webp" type="image/webp">
+        <img class="img-fluid" src="https://res.cloudinary.com/diana-staver/image/upload/v1576127730/hfy9uttrapf0dylbjqev.jpg" alt="Salon Photo 1">
+    </picture>
+</div> <!-- End of div container -->
 {% endblock content %}

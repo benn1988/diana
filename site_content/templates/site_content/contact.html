@@ -9,8 +9,14 @@
                 <p><strong>CONTACT</strong></p>
                 <a href="tel:+16196487030"><img src="{% static 'site_content/images/telephone.svg' %}" alt="Telephone logo"> 619-648-7030</a></br>
                 <a type="button" href="tel:+16196487030" class="btn btn-dark btn-lg mt-2 mb-4">Call Now</a></br>
-                <a href="mailto:dianafleur1986@gmail.com">dianafleur1986@gmail.com</a></br>
-                <a type="button" href="mailto:dianafleur1986@gmail.com" class="btn btn-dark btn-lg mt-2 mb-4">Send Email</a></br>
+                <script type="text/javascript">
+                    user = "dianafleur1986";
+                    domain = "gmail.com";
+                    document.write('<a href=\"mailto:' + user + '@' + domain + '\">' + 
+                                user + '@' + domain + '</a>');
+                </script>
+                <noscript>Please enable JavaScript to see the email address</noscript></br>
+                <a id="emailbtn" type="button" class="btn btn-dark btn-lg mt-2 mb-4">Send Email</a></br>
             </div>
             <div class="col-12 col-md-6 col-xl-4">
                 <p><strong>ADDRESS</strong></p>
@@ -32,4 +38,11 @@
     <div class="container-fluid px-0 mb-5">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3356.7802194043657!2d-117.15798858486386!3d32.71846738098972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d955bde6921a3b%3A0x63563cb282ce33f2!2sDiana%20Staver%20Hair%20%26%20Makeup%20Artist!5e0!3m2!1sen!2sus!4v1570431019083!5m2!1sen!2sus" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
     </div>
+    <script type="text/javascript">
+        var mail = "mailto:"
+        var user = "dianafleur1986";
+        var domain = "gmail.com";
+        var at = "@";
+        document.getElementById("emailbtn").href=mail + user + at + domain;
+    </script>
 {% endblock content %}

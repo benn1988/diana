@@ -100,28 +100,11 @@ header {
   margin: 1rem 0 0 10%;
 }
 
-/* Card with bio on index page */
-.card.index-bio {
-  display: flex;
-  display: -ms-flexbox;
-  display: -moz-flex;
-  display: -webkit-flex;
-  -ms-flexbox-direction: column;
-  -moz-flex-direction: column;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  box-shadow: 5px 5px 20px #231709;
-  background-color: #cacaca;
+/* Bio info on index page */
+.index-bio {
+  background-color: #231709 !important;
 }
 
-.card.index-bio p span {
-  display: none;
-}
-
-.card.index-bio img {
-  max-height: 491px;
-  max-width: 350px;
-}
 
 /* Footer CSS */
 footer {
@@ -256,9 +239,6 @@ div.map p {
 
 /* Media queries */
 @media only screen and (min-width:320px) and (max-width: 400px) {
-  .card.index-bio img {
-    max-width: 320px;
-  }
   .container .address {
     font-size: 1.4rem;
   }
@@ -292,13 +272,6 @@ div.map p {
     text-align: center;
   }
 
-  .card.index-bio {
-    -ms-flexbox-direction: row;
-    -moz-flex-direction: row;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-  }
-
   ul.navbar-nav li.nav-item:nth-child(n+2)::after {
     display: block;
   }
@@ -318,10 +291,6 @@ div.map p {
     margin: 0 33px !important;
     font-size: 1rem;
   }
-
-  .card.index-bio {
-    max-width: 70%;
-  }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -331,8 +300,5 @@ div.map p {
 
   .nowebp header, .no-js header {
     background-image: url("images/background1920.jpg");
-  }
-  .card.index-bio p span {
-    display: inline;
   }
 }
