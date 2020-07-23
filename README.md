@@ -1,1 +1,1 @@
-# diana
+Django Application that handles a dynamic blog with comments, profiles, conditional views for authenticated and/or admin users. It was deployed to Heroku using Git and GitHub integration. Content is served using AWS S3 and Cloudflare CDN. Integrated Google Analytics for traffic reports. Implemented SEO, Mobile First RWD, Accessibility and other principles that helped the application attain a 100% score in Google Lighthouse.
