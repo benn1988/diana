@@ -302,3 +302,20 @@ div.map p {
     background-image: url("images/background1920.jpg");
   }
 }
+
+/*! CSS Used from: https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css */
+*,::after,::before{box-sizing:border-box;}
+img{vertical-align:middle;border-style:none;}
+.img-fluid{max-width:100%;height:auto;}
+.col-11,.col-md-7,.col-sm-7{position:relative;width:100%;padding-right:15px;padding-left:15px;}
+.col-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%;}
+@media (min-width:576px){
+.col-sm-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%;}
+}
+@media (min-width:768px){
+.col-md-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%;}
+}
+@media print{
+*,::after,::before{text-shadow:none!important;box-shadow:none!important;}
+img{page-break-inside:avoid;}
+}
