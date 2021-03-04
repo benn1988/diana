@@ -62,10 +62,10 @@ header {
   height: 75%;
   background-position: center 40px;
   background-repeat: no-repeat;
-  background-size: cover;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
+  background-size: cover;
 }
 
 .nowebp header, .no-js header {
