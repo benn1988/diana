@@ -23,14 +23,12 @@ from .views import (
     PhotoUploadView,
     PhotoDeleteView,
     PhotoEditView,
-    MapView,
 )
 
 urlpatterns = [
     path('', IndexView.as_view(), name='index'),
     path('services/', ServicesView.as_view(), name='services'),
     path('contact/', ContactView.as_view(), name='contact'),
-    path('contact/map/', MapView.as_view(), name='map'),
     path('gallery/', GalleryView.as_view(), name='gallery'),
     path('gallery/upload/', PhotoUploadView.as_view(), name='photo-upload'),
     path('gallery/<int:pk>/delete/', PhotoDeleteView.as_view(), name='photo-delete'),
